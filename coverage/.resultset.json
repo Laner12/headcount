@@ -1,0 +1,30 @@
+{
+  "Unit Tests": {
+    "coverage": {
+      "/Users/raphabarbo/turing/1module/projects/headcount/lib/enrollment.rb": [
+        1,
+        null,
+        1,
+        5,
+        null,
+        null,
+        1,
+        5,
+        11,
+        null,
+        null,
+        null,
+        1,
+        11,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1465330708
+  }
+}
