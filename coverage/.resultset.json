@@ -1,0 +1,33 @@
+{
+  "Unit Tests": {
+    "coverage": {
+      "/Users/raphabarbo/turing/1module/projects/headcount/lib/district_repository.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1991,
+        1991,
+        1991,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1465258945
+  }
+}
