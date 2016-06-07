@@ -4,6 +4,10 @@ class Enrollment
     @attributes = attributes
   end
 
+  def name
+    @attributes[:kindergarten_participation][:name].upcase
+  end
+
   def kindergarten_participation_by_year
     @attributes[:kindergarten_participation].reduce({}) do |result, pair|
       result.merge({pair.first => truncate_float(pair.last)})
