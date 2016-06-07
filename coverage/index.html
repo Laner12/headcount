@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-06-07T14:18:28-06:00">2016-06-07T14:18:28-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-06-07T14:48:13-06:00">2016-06-07T14:48:13-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.9
+         1.6
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>1</b> files in total.
-    <b>10</b> relevant lines. 
-    <span class="green"><b>10</b> lines covered</span> and
+    <b>5</b> relevant lines. 
+    <span class="green"><b>5</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -51,13 +51,13 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#10a91d38f3a5bb31c49562492315b86733eacce9" class="src_link" title="lib/enrollment.rb">lib/enrollment.rb</a></td>
+        <td class="strong"><a href="#f6275d4bfbbe0fb8d689094982149120dfbfcae9" class="src_link" title="lib/district.rb">lib/district.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>21</td>
         <td>10</td>
-        <td>10</td>
+        <td>5</td>
+        <td>5</td>
         <td>0</td>
-        <td>3.9</td>
+        <td>1.6</td>
       </tr>
       
     </tbody>
@@ -76,13 +76,13 @@
     
       <div class="source_files">
       
-        <div class="source_table" id="10a91d38f3a5bb31c49562492315b86733eacce9">
+        <div class="source_table" id="f6275d4bfbbe0fb8d689094982149120dfbfcae9">
   <div class="header">
-    <h3>lib/enrollment.rb</h3>
+    <h3>lib/district.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>10</b> relevant lines. 
-      <span class="green"><b>10</b> lines covered</span> and
+      <b>5</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -93,7 +93,7 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">class Enrollment</code>
+          <code class="ruby">class District</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
@@ -108,8 +108,8 @@
           <code class="ruby">  def initialize(attributes)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="4">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="4">
+          <span class="hits">2</span>
           
           <code class="ruby">    @attributes = attributes</code>
         </li>
@@ -129,88 +129,22 @@
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">  def kindergarten_participation_by_year</code>
+          <code class="ruby">  def name</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="8">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="3" data-linenumber="8">
+          <span class="hits">3</span>
           
-          <code class="ruby">    @attributes[:kindergarten_participation].reduce({}) do |result, pair|</code>
+          <code class="ruby">    @attributes[:name].upcase</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="9">
-          <span class="hits">11</span>
+        <li class="never" data-hits="" data-linenumber="9">
           
-          <code class="ruby">      result.merge({pair.first =&gt; truncate_float(pair.last)})</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def truncate_float(float)</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="14">
-          <span class="hits">11</span>
-          
-          <code class="ruby">    (float * 1000).floor / 1000.to_f</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def kindergarten_participation_in_year(year)</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="18">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      kindergarten_participation_by_year[year]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">end</code>
