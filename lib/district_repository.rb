@@ -1,11 +1,12 @@
-require "pry"
-require "csv"
 require_relative "district"
+require_relative "enrollment_repository"
+require "csv"
 
 class DistrictRepository
 
   def initialize(districts = [])
     @districts = districts
+    @enrollment_repo = EnrollmentRepository.new
   end
 
   def load_data(file_tree)

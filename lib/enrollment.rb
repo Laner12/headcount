@@ -6,7 +6,7 @@ class Enrollment
   end
 
   def name
-    @name = @data[:name].upcase
+    @data[:name].upcase
   end
 
   def kindergarten_participation_by_year

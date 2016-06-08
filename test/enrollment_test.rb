@@ -1,5 +1,5 @@
+require_relative "../lib/enrollment"
 require_relative "test_helper"
-require "./lib/enrollment"
 
 class EnrollmentTest < Minitest::Test
 
@@ -32,5 +32,9 @@ class EnrollmentTest < Minitest::Test
     assert_equal nil, return_value
   end
 
-
+  def test_name_method
+    e = Enrollment.new({:name => "ACADEMY 20"})
+    
+    assert_equal "ACADEMY 20", e.name
+  end
 end
