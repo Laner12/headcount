@@ -29,4 +29,10 @@ class DistrictRepository
       district.attributes[:name] == name
     end
   end
+
+  def find_all_matching(fragment)
+    @districts.select do |district|
+      district.attributes[:name].start_with?(fragment.upcase)
+    end
+  end
 end

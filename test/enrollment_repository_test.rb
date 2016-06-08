@@ -11,8 +11,8 @@ class EnrollmentRepositoryTest < Minitest::Test
       }
     })
     enrollment = er.find_by_name("ACADEMY 20")
-    # <Enrollment>
-    assert_equal "", enrollment
+
+    assert_instance_of Enrollment, enrollment
   end
 
   def test_searching_for_a_name_in_enrollment
