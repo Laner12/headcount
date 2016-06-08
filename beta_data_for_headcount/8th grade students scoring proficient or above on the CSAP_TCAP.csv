@@ -1,0 +1,46 @@
+Location	,	Score	,	TimeFrame	,	DataFormat	,	Data
+ACADEMY 20	,	Math	,	2012	,	Percent	,	0.68197
+ACADEMY 20	,	Writing	,	2012	,	Percent	,	0.73839
+ACADEMY 20	,	Reading	,	2012	,	Percent	,	0.83352
+ACADEMY 20	,	Math	,	2013	,	Percent	,	0.6613
+ACADEMY 20	,	Math	,	2014	,	Percent	,	0.68496
+ACADEMY 20	,	Reading	,	2013	,	Percent	,	0.85286
+ACADEMY 20	,	Reading	,	2014	,	Percent	,	0.827
+ACADEMY 20	,	Writing	,	2013	,	Percent	,	0.75069
+ACADEMY 20	,	Writing	,	2014	,	Percent	,	0.74789
+BAYFIELD 10 JT-R	,	Math	,	2012	,	Percent	,	0.51064
+BAYFIELD 10 JT-R	,	Writing	,	2012	,	Percent	,	0.55319
+BAYFIELD 10 JT-R	,	Reading	,	2012	,	Percent	,	0.74468
+BAYFIELD 10 JT-R	,	Math	,	2013	,	Percent	,	0.52
+BAYFIELD 10 JT-R	,	Math	,	2014	,	Percent	,	0.65094
+BAYFIELD 10 JT-R	,	Reading	,	2013	,	Percent	,	0.81
+BAYFIELD 10 JT-R	,	Reading	,	2014	,	Percent	,	0.88679
+BAYFIELD 10 JT-R	,	Writing	,	2013	,	Percent	,	0.61
+BAYFIELD 10 JT-R	,	Writing	,	2014	,	Percent	,	0.73585
+CALHAN RJ-1	,	Math	,	2012	,	Percent	,	0.46512
+DE BEQUE 49JT	,	Math	,	2012	,	Percent	,	N/A
+EAGLE COUNTY RE 50	,	Math	,	2012	,	Percent	,	0.51011
+CALHAN RJ-1	,	Writing	,	2012	,	Percent	,	0.53488
+DE BEQUE 49JT	,	Writing	,	2012	,	Percent	,	N/A
+EAGLE COUNTY RE 50	,	Writing	,	2012	,	Percent	,	0.63146
+CALHAN RJ-1	,	Reading	,	2012	,	Percent	,	0.62791
+DE BEQUE 49JT	,	Reading	,	2012	,	Percent	,	N/A
+EAGLE COUNTY RE 50	,	Reading	,	2012	,	Percent	,	0.66292
+CALHAN RJ-1	,	Math	,	2013	,	Percent	,	0.51515
+DE BEQUE 49JT	,	Math	,	2013	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Math	,	2013	,	Percent	,	0.54195
+CALHAN RJ-1	,	Math	,	2014	,	Percent	,	0.48148
+DE BEQUE 49JT	,	Math	,	2014	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Math	,	2014	,	Percent	,	0.55532
+CALHAN RJ-1	,	Reading	,	2013	,	Percent	,	0.69697
+DE BEQUE 49JT	,	Reading	,	2013	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Reading	,	2013	,	Percent	,	0.70748
+CALHAN RJ-1	,	Reading	,	2014	,	Percent	,	0.7037
+DE BEQUE 49JT	,	Reading	,	2014	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Reading	,	2014	,	Percent	,	0.7119
+CALHAN RJ-1	,	Writing	,	2013	,	Percent	,	0.51515
+DE BEQUE 49JT	,	Writing	,	2013	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Writing	,	2013	,	Percent	,	0.61224
+CALHAN RJ-1	,	Writing	,	2014	,	Percent	,	0.48148
+DE BEQUE 49JT	,	Writing	,	2014	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Writing	,	2014	,	Percent	,	0.64509

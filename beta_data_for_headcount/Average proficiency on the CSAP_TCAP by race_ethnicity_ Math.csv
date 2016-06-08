@@ -1,0 +1,121 @@
+Location	,	Race Ethnicity	,	TimeFrame	,	DataFormat	,	Data
+ACADEMY 20	,	All Students	,	2012	,	Percent	,	0.6894
+ACADEMY 20	,	Asian	,	2012	,	Percent	,	0.8182
+ACADEMY 20	,	Black	,	2012	,	Percent	,	0.4248
+ACADEMY 20	,	Hawaiian/Pacific Islander	,	2012	,	Percent	,	0.5714
+ACADEMY 20	,	Hispanic	,	2012	,	Percent	,	0.5722
+ACADEMY 20	,	Native American	,	2012	,	Percent	,	0.5714
+ACADEMY 20	,	Two or more	,	2012	,	Percent	,	0.6899
+ACADEMY 20	,	White	,	2012	,	Percent	,	0.7135
+ACADEMY 20	,	All Students	,	2013	,	Percent	,	0.69683
+ACADEMY 20	,	Asian	,	2013	,	Percent	,	0.8053
+ACADEMY 20	,	Black	,	2013	,	Percent	,	0.4404
+ACADEMY 20	,	Hawaiian/Pacific Islander	,	2013	,	Percent	,	0.6833
+ACADEMY 20	,	Hispanic	,	2013	,	Percent	,	0.5883
+ACADEMY 20	,	Native American	,	2013	,	Percent	,	0.5932
+ACADEMY 20	,	Two or more	,	2013	,	Percent	,	0.6967
+ACADEMY 20	,	White	,	2013	,	Percent	,	0.7208
+ACADEMY 20	,	All Students	,	2014	,	Percent	,	0.69944
+ACADEMY 20	,	Asian	,	2014	,	Percent	,	0.8
+ACADEMY 20	,	Black	,	2014	,	Percent	,	0.4205
+ACADEMY 20	,	Hawaiian/Pacific Islander	,	2014	,	Percent	,	0.6818
+ACADEMY 20	,	Hispanic	,	2014	,	Percent	,	0.6048
+ACADEMY 20	,	Native American	,	2014	,	Percent	,	0.5439
+ACADEMY 20	,	Two or more	,	2014	,	Percent	,	0.6932
+ACADEMY 20	,	White	,	2014	,	Percent	,	0.723
+BAYFIELD 10 JT-R	,	All Students	,	2012	,	Percent	,	0.57053
+CALHAN RJ-1	,	All Students	,	2012	,	Percent	,	0.51582
+BAYFIELD 10 JT-R	,	Asian	,	2012	,	Percent	,	0
+CALHAN RJ-1	,	Asian	,	2012	,	Percent	,	0
+BAYFIELD 10 JT-R	,	Black	,	2012	,	Percent	,	LNE
+CALHAN RJ-1	,	Black	,	2012	,	Percent	,	0
+BAYFIELD 10 JT-R	,	Hawaiian/Pacific Islander	,	2012	,	Percent	,	0.3158
+CALHAN RJ-1	,	Hawaiian/Pacific Islander	,	2012	,	Percent	,	LNE
+BAYFIELD 10 JT-R	,	Hispanic	,	2012	,	Percent	,	0.3889
+CALHAN RJ-1	,	Hispanic	,	2012	,	Percent	,	0.4783
+BAYFIELD 10 JT-R	,	Native American	,	2012	,	Percent	,	0.3158
+CALHAN RJ-1	,	Native American	,	2012	,	Percent	,	LNE
+BAYFIELD 10 JT-R	,	Two or more	,	2012	,	Percent	,	0.4444
+CALHAN RJ-1	,	Two or more	,	2012	,	Percent	,	LNE
+BAYFIELD 10 JT-R	,	White	,	2012	,	Percent	,	0.6149
+CALHAN RJ-1	,	White	,	2012	,	Percent	,	0.5379
+BAYFIELD 10 JT-R	,	All Students	,	2013	,	Percent	,	0.56196
+CALHAN RJ-1	,	All Students	,	2013	,	Percent	,	0.52303
+BAYFIELD 10 JT-R	,	Asian	,	2013	,	Percent	,	LNE
+CALHAN RJ-1	,	Asian	,	2013	,	Percent	,	LNE
+BAYFIELD 10 JT-R	,	Black	,	2013	,	Percent	,	LNE
+CALHAN RJ-1	,	Black	,	2013	,	Percent	,	LNE
+BAYFIELD 10 JT-R	,	Hawaiian/Pacific Islander	,	2013	,	Percent	,	LNE
+CALHAN RJ-1	,	Hawaiian/Pacific Islander	,	2013	,	Percent	,	LNE
+BAYFIELD 10 JT-R	,	Hispanic	,	2013	,	Percent	,	0.3894
+BAYFIELD 10 JT-R	,	Native American	,	2013	,	Percent	,	0.3
+BAYFIELD 10 JT-R	,	Two or more	,	2013	,	Percent	,	0.5882
+BAYFIELD 10 JT-R	,	White	,	2013	,	Percent	,	0.5997
+BAYFIELD 10 JT-R	,	All Students	,	2014	,	Percent	,	0.55416
+BAYFIELD 10 JT-R	,	Asian	,	2014	,	Percent	,	LNE
+BAYFIELD 10 JT-R	,	Black	,	2014	,	Percent	,	LNE
+BAYFIELD 10 JT-R	,	Hawaiian/Pacific Islander	,	2014	,	Percent	,	LNE
+BAYFIELD 10 JT-R	,	Hispanic	,	2014	,	Percent	,	0.4052
+BAYFIELD 10 JT-R	,	Native American	,	2014	,	Percent	,	0.3043
+BAYFIELD 10 JT-R	,	Two or more	,	2014	,	Percent	,	0.7778
+BAYFIELD 10 JT-R	,	White	,	2014	,	Percent	,	0.5836
+DE BEQUE 49JT	,	All Students	,	2012	,	Percent	,	0.45455
+EAGLE COUNTY RE 50	,	All Students	,	2012	,	Percent	,	0.55526
+DE BEQUE 49JT	,	Asian	,	2012	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Asian	,	2012	,	Percent	,	0.7021
+DE BEQUE 49JT	,	Black	,	2012	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Black	,	2012	,	Percent	,	0
+DE BEQUE 49JT	,	Hawaiian/Pacific Islander	,	2012	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Hawaiian/Pacific Islander	,	2012	,	Percent	,	0.36
+DE BEQUE 49JT	,	Hispanic	,	2012	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Hispanic	,	2012	,	Percent	,	0.3798
+DE BEQUE 49JT	,	Native American	,	2012	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Native American	,	2012	,	Percent	,	0.36
+DE BEQUE 49JT	,	Two or more	,	2012	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Two or more	,	2012	,	Percent	,	0.5778
+DE BEQUE 49JT	,	White	,	2012	,	Percent	,	0.4783
+EAGLE COUNTY RE 50	,	White	,	2012	,	Percent	,	0.7362
+DE BEQUE 49JT	,	All Students	,	2013	,	Percent	,	0.41429
+EAGLE COUNTY RE 50	,	All Students	,	2013	,	Percent	,	0.56183
+DE BEQUE 49JT	,	Asian	,	2013	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Asian	,	2013	,	Percent	,	0.7556
+DE BEQUE 49JT	,	Black	,	2013	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Black	,	2013	,	Percent	,	0.375
+DE BEQUE 49JT	,	Hawaiian/Pacific Islander	,	2013	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Hawaiian/Pacific Islander	,	2013	,	Percent	,	LNE
+CALHAN RJ-1	,	Hispanic	,	2013	,	Percent	,	0.5185
+DE BEQUE 49JT	,	Hispanic	,	2013	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Hispanic	,	2013	,	Percent	,	0.3865
+CALHAN RJ-1	,	Native American	,	2013	,	Percent	,	LNE
+DE BEQUE 49JT	,	Native American	,	2013	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Native American	,	2013	,	Percent	,	0.4286
+CALHAN RJ-1	,	Two or more	,	2013	,	Percent	,	LNE
+DE BEQUE 49JT	,	Two or more	,	2013	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Two or more	,	2013	,	Percent	,	0.7
+CALHAN RJ-1	,	White	,	2013	,	Percent	,	0.542
+DE BEQUE 49JT	,	White	,	2013	,	Percent	,	0.4167
+EAGLE COUNTY RE 50	,	White	,	2013	,	Percent	,	0.7368
+CALHAN RJ-1	,	All Students	,	2014	,	Percent	,	0.50172
+DE BEQUE 49JT	,	All Students	,	2014	,	Percent	,	0.51765
+EAGLE COUNTY RE 50	,	All Students	,	2014	,	Percent	,	0.53596
+CALHAN RJ-1	,	Asian	,	2014	,	Percent	,	LNE
+DE BEQUE 49JT	,	Asian	,	2014	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Asian	,	2014	,	Percent	,	0.7209
+CALHAN RJ-1	,	Black	,	2014	,	Percent	,	LNE
+DE BEQUE 49JT	,	Black	,	2014	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Black	,	2014	,	Percent	,	0.2727
+CALHAN RJ-1	,	Hawaiian/Pacific Islander	,	2014	,	Percent	,	LNE
+DE BEQUE 49JT	,	Hawaiian/Pacific Islander	,	2014	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Hawaiian/Pacific Islander	,	2014	,	Percent	,	LNE
+CALHAN RJ-1	,	Hispanic	,	2014	,	Percent	,	0.3448
+DE BEQUE 49JT	,	Hispanic	,	2014	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Hispanic	,	2014	,	Percent	,	0.3527
+CALHAN RJ-1	,	Native American	,	2014	,	Percent	,	LNE
+DE BEQUE 49JT	,	Native American	,	2014	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Native American	,	2014	,	Percent	,	0.3125
+CALHAN RJ-1	,	Two or more	,	2014	,	Percent	,	LNE
+DE BEQUE 49JT	,	Two or more	,	2014	,	Percent	,	LNE
+EAGLE COUNTY RE 50	,	Two or more	,	2014	,	Percent	,	0.7358
+CALHAN RJ-1	,	White	,	2014	,	Percent	,	0.5257
+DE BEQUE 49JT	,	White	,	2014	,	Percent	,	0.52
+EAGLE COUNTY RE 50	,	White	,	2014	,	Percent	,	0.7256
