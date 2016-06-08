@@ -1,16 +1,16 @@
 class Enrollment
-  attr_reader :attributes
-  
-  def initialize(attributes)
-    @attributes = attributes
+  attr_reader :data
+
+  def initialize(data)
+    @data = data
   end
 
   def name
-    @attributes[:kindergarten_participation][:name].upcase
+    @name = @data[:name].upcase
   end
 
   def kindergarten_participation_by_year
-    @attributes[:kindergarten_participation].reduce({}) do |result, pair|
+    @data[:kindergarten_participation].reduce({}) do |result, pair|
       result.merge({pair.first => truncate_float(pair.last)})
     end
   end
@@ -22,5 +22,4 @@ class Enrollment
   def kindergarten_participation_in_year(year)
       kindergarten_participation_by_year[year]
   end
-
 end
