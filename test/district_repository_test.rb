@@ -5,7 +5,6 @@ require "./lib/district_repository"
 class DistrictRepositoryTest < Minitest::Test
 
   def test_it_passes_
-    skip
     dr = DistrictRepository.new
     dr.load_data({
       :enrollment => {
@@ -17,7 +16,7 @@ class DistrictRepositoryTest < Minitest::Test
     assert_equal "", district
   end
 
-  def test_it_can_find_with_name
-
+  def test_it_can_find_by_name
+    skip
   end
 end
