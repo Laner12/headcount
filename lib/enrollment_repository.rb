@@ -1,6 +1,5 @@
 require_relative "enrollment"
 require "csv"
-require "pry"
 
 class EnrollmentRepository
 
@@ -10,7 +9,6 @@ class EnrollmentRepository
 
   def load_data(file_tree)
     filepath = file_tree[:enrollment][:kindergarten]
-
     years = CSV.foreach(filepath, headers: true, header_converters: :symbol).map do |row|
       { :name => row[:location], row[:timeframe].to_i => row[:data].to_f}
     end.group_by do |row|
@@ -31,6 +29,3 @@ class EnrollmentRepository
     end
   end
 end
-
-# contents = CSVUpload.contents("./data/Kindergartners in full-day program.csv")
-# CSVUpload.updload_kindergartners
