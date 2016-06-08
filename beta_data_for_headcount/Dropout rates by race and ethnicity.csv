@@ -1,0 +1,101 @@
+Location	,	Category	,	TimeFrame	,	DataFormat	,	Data
+ACADEMY 20	,	All Students	,	2011	,	Percent	,	0.002
+ACADEMY 20	,	Female Students	,	2011	,	Percent	,	0.002
+ACADEMY 20	,	Male Students	,	2011	,	Percent	,	0.002
+ACADEMY 20	,	Native American Students	,	2011	,	Percent	,	0
+ACADEMY 20	,	Asian Students	,	2011	,	Percent	,	0
+ACADEMY 20	,	Black Students	,	2011	,	Percent	,	0
+ACADEMY 20	,	Hispanic Students	,	2011	,	Percent	,	0.004
+ACADEMY 20	,	White Students	,	2011	,	Percent	,	0.002
+ACADEMY 20	,	Native Hawaiian or Other Pacific Islander	,	2011	,	Percent	,	0
+ACADEMY 20	,	Two or More Races	,	2011	,	Percent	,	0
+ACADEMY 20	,	All Students	,	2012	,	Percent	,	0.004
+ACADEMY 20	,	Asian Students	,	2012	,	Percent	,	0.007
+ACADEMY 20	,	Black Students	,	2012	,	Percent	,	0.002
+ACADEMY 20	,	Female Students	,	2012	,	Percent	,	0.004
+ACADEMY 20	,	Hispanic Students	,	2012	,	Percent	,	0.006
+ACADEMY 20	,	Male Students	,	2012	,	Percent	,	0.004
+ACADEMY 20	,	Native American Students	,	2012	,	Percent	,	0.036
+ACADEMY 20	,	Native Hawaiian or Other Pacific Islander	,	2012	,	Percent	,	0
+ACADEMY 20	,	Two or More Races	,	2012	,	Percent	,	0
+ACADEMY 20	,	White Students	,	2012	,	Percent	,	0.004
+BAYFIELD 10 JT-R	,	All Students	,	2011	,	Percent	,	0.004
+BAYFIELD 10 JT-R	,	Female Students	,	2011	,	Percent	,	0.005
+BAYFIELD 10 JT-R	,	Male Students	,	2011	,	Percent	,	0.003
+BAYFIELD 10 JT-R	,	Native American Students	,	2011	,	Percent	,	0
+BAYFIELD 10 JT-R	,	Asian Students	,	2011	,	Percent	,	0
+BAYFIELD 10 JT-R	,	Black Students	,	2011	,	Percent	,	0
+BAYFIELD 10 JT-R	,	Hispanic Students	,	2011	,	Percent	,	0
+BAYFIELD 10 JT-R	,	White Students	,	2011	,	Percent	,	0.002
+BAYFIELD 10 JT-R	,	Native Hawaiian or Other Pacific Islander	,	2011	,	Percent	,	0
+BAYFIELD 10 JT-R	,	Two or More Races	,	2011	,	Percent	,	0.1
+BAYFIELD 10 JT-R	,	All Students	,	2012	,	Percent	,	0.004
+BAYFIELD 10 JT-R	,	Asian Students	,	2012	,	Percent	,	0
+BAYFIELD 10 JT-R	,	Black Students	,	2012	,	Percent	,	0
+BAYFIELD 10 JT-R	,	Female Students	,	2012	,	Percent	,	0.008
+BAYFIELD 10 JT-R	,	Hispanic Students	,	2012	,	Percent	,	0.01
+BAYFIELD 10 JT-R	,	Male Students	,	2012	,	Percent	,	0
+BAYFIELD 10 JT-R	,	Native American Students	,	2012	,	Percent	,	0
+BAYFIELD 10 JT-R	,	Native Hawaiian or Other Pacific Islander	,	2012	,	Percent	,	0
+BAYFIELD 10 JT-R	,	Two or More Races	,	2012	,	Percent	,	0
+BAYFIELD 10 JT-R	,	White Students	,	2012	,	Percent	,	0.004
+CALHAN RJ-1	,	All Students	,	2011	,	Percent	,	0.012
+DE BEQUE 49JT	,	All Students	,	2011	,	Percent	,	0.016
+EAGLE COUNTY RE 50	,	All Students	,	2011	,	Percent	,	0.037
+CALHAN RJ-1	,	Female Students	,	2011	,	Percent	,	0.006
+DE BEQUE 49JT	,	Female Students	,	2011	,	Percent	,	0
+EAGLE COUNTY RE 50	,	Female Students	,	2011	,	Percent	,	0.036
+CALHAN RJ-1	,	Male Students	,	2011	,	Percent	,	0.017
+DE BEQUE 49JT	,	Male Students	,	2011	,	Percent	,	0.024
+EAGLE COUNTY RE 50	,	Male Students	,	2011	,	Percent	,	0.039
+CALHAN RJ-1	,	Native American Students	,	2011	,	Percent	,	0
+DE BEQUE 49JT	,	Native American Students	,	2011	,	Percent	,	0
+EAGLE COUNTY RE 50	,	Native American Students	,	2011	,	Percent	,	0.048
+CALHAN RJ-1	,	Asian Students	,	2011	,	Percent	,	0.067
+DE BEQUE 49JT	,	Asian Students	,	2011	,	Percent	,	0
+EAGLE COUNTY RE 50	,	Asian Students	,	2011	,	Percent	,	0
+CALHAN RJ-1	,	Black Students	,	2011	,	Percent	,	0
+DE BEQUE 49JT	,	Black Students	,	2011	,	Percent	,	0
+EAGLE COUNTY RE 50	,	Black Students	,	2011	,	Percent	,	0
+CALHAN RJ-1	,	Hispanic Students	,	2011	,	Percent	,	0
+DE BEQUE 49JT	,	Hispanic Students	,	2011	,	Percent	,	0
+EAGLE COUNTY RE 50	,	Hispanic Students	,	2011	,	Percent	,	0.065
+CALHAN RJ-1	,	White Students	,	2011	,	Percent	,	0.01
+DE BEQUE 49JT	,	White Students	,	2011	,	Percent	,	0.02
+EAGLE COUNTY RE 50	,	White Students	,	2011	,	Percent	,	0.01
+CALHAN RJ-1	,	Native Hawaiian or Other Pacific Islander	,	2011	,	Percent	,	0
+DE BEQUE 49JT	,	Native Hawaiian or Other Pacific Islander	,	2011	,	Percent	,	0
+EAGLE COUNTY RE 50	,	Native Hawaiian or Other Pacific Islander	,	2011	,	Percent	,	0
+CALHAN RJ-1	,	Two or More Races	,	2011	,	Percent	,	0
+DE BEQUE 49JT	,	Two or More Races	,	2011	,	Percent	,	0
+EAGLE COUNTY RE 50	,	Two or More Races	,	2011	,	Percent	,	0
+CALHAN RJ-1	,	All Students	,	2012	,	Percent	,	0
+DE BEQUE 49JT	,	All Students	,	2012	,	Percent	,	0.037
+EAGLE COUNTY RE 50	,	All Students	,	2012	,	Percent	,	0.031
+CALHAN RJ-1	,	Asian Students	,	2012	,	Percent	,	0
+DE BEQUE 49JT	,	Asian Students	,	2012	,	Percent	,	0
+EAGLE COUNTY RE 50	,	Asian Students	,	2012	,	Percent	,	0
+CALHAN RJ-1	,	Black Students	,	2012	,	Percent	,	0
+DE BEQUE 49JT	,	Black Students	,	2012	,	Percent	,	0
+EAGLE COUNTY RE 50	,	Black Students	,	2012	,	Percent	,	0
+CALHAN RJ-1	,	Female Students	,	2012	,	Percent	,	0
+DE BEQUE 49JT	,	Female Students	,	2012	,	Percent	,	0
+EAGLE COUNTY RE 50	,	Female Students	,	2012	,	Percent	,	0.025
+CALHAN RJ-1	,	Hispanic Students	,	2012	,	Percent	,	0
+DE BEQUE 49JT	,	Hispanic Students	,	2012	,	Percent	,	0
+EAGLE COUNTY RE 50	,	Hispanic Students	,	2012	,	Percent	,	0.056
+CALHAN RJ-1	,	Male Students	,	2012	,	Percent	,	0
+DE BEQUE 49JT	,	Male Students	,	2012	,	Percent	,	0.047
+EAGLE COUNTY RE 50	,	Male Students	,	2012	,	Percent	,	0.036
+CALHAN RJ-1	,	Native American Students	,	2012	,	Percent	,	0
+DE BEQUE 49JT	,	Native American Students	,	2012	,	Percent	,	0
+EAGLE COUNTY RE 50	,	Native American Students	,	2012	,	Percent	,	0
+CALHAN RJ-1	,	Native Hawaiian or Other Pacific Islander	,	2012	,	Percent	,	0
+DE BEQUE 49JT	,	Native Hawaiian or Other Pacific Islander	,	2012	,	Percent	,	0
+EAGLE COUNTY RE 50	,	Native Hawaiian or Other Pacific Islander	,	2012	,	Percent	,	0.25
+CALHAN RJ-1	,	Two or More Races	,	2012	,	Percent	,	0
+DE BEQUE 49JT	,	Two or More Races	,	2012	,	Percent	,	0
+EAGLE COUNTY RE 50	,	Two or More Races	,	2012	,	Percent	,	0
+CALHAN RJ-1	,	White Students	,	2012	,	Percent	,	0
+DE BEQUE 49JT	,	White Students	,	2012	,	Percent	,	0.048
+EAGLE COUNTY RE 50	,	White Students	,	2012	,	Percent	,	0.006

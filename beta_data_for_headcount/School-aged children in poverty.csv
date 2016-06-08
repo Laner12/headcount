@@ -1,0 +1,31 @@
+Location	,	TimeFrame	,	DataFormat	,	Data
+ACADEMY 20	,	2011	,	Number	,	1279
+ACADEMY 20	,	2011	,	Percent	,	0.059
+ACADEMY 20	,	2012	,	Number	,	1401
+ACADEMY 20	,	2012	,	Percent	,	0.064
+ACADEMY 20	,	2013	,	Number	,	1067
+ACADEMY 20	,	2013	,	Percent	,	0.048
+BAYFIELD 10 JT-R	,	2011	,	Number	,	125
+BAYFIELD 10 JT-R	,	2011	,	Percent	,	0.086
+BAYFIELD 10 JT-R	,	2012	,	Number	,	143
+BAYFIELD 10 JT-R	,	2012	,	Percent	,	0.098
+BAYFIELD 10 JT-R	,	2013	,	Number	,	126
+BAYFIELD 10 JT-R	,	2013	,	Percent	,	0.085
+CALHAN RJ-1	,	2011	,	Number	,	88
+DE BEQUE 49JT	,	2011	,	Number	,	24
+CALHAN RJ-1	,	2011	,	Percent	,	0.139
+DE BEQUE 49JT	,	2011	,	Percent	,	0.163
+CALHAN RJ-1	,	2012	,	Number	,	127
+CALHAN RJ-1	,	2012	,	Percent	,	0.201
+DE BEQUE 49JT	,	2012	,	Number	,	30
+DE BEQUE 49JT	,	2012	,	Percent	,	0.204
+CALHAN RJ-1	,	2013	,	Number	,	83
+DE BEQUE 49JT	,	2013	,	Number	,	22
+CALHAN RJ-1	,	2013	,	Percent	,	0.129
+DE BEQUE 49JT	,	2013	,	Percent	,	0.152
+EAGLE COUNTY RE 50	,	2011	,	Number	,	1076
+EAGLE COUNTY RE 50	,	2011	,	Percent	,	0.147
+EAGLE COUNTY RE 50	,	2012	,	Number	,	1016
+EAGLE COUNTY RE 50	,	2012	,	Percent	,	0.137
+EAGLE COUNTY RE 50	,	2013	,	Number	,	1000
+EAGLE COUNTY RE 50	,	2013	,	Percent	,	0.135

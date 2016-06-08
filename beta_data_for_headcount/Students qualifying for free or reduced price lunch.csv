@@ -1,0 +1,91 @@
+Location	,	Poverty Level	,	TimeFrame	,	DataFormat	,	Data
+ACADEMY 20	,	Eligible for Free Lunch	,	2014	,	Number	,	2156
+ACADEMY 20	,	Eligible for Free or Reduced Lunch	,	2014	,	Number	,	3132
+ACADEMY 20	,	Eligible for Free or Reduced Lunch	,	2014	,	Percent	,	0.12743
+ACADEMY 20	,	Eligible for Reduced Price Lunch	,	2014	,	Number	,	976
+ACADEMY 20	,	Eligible for Reduced Price Lunch	,	2014	,	Percent	,	0.03971
+ACADEMY 20	,	Eligible for Free Lunch	,	2014	,	Percent	,	0.08772
+ACADEMY 20	,	Eligible for Reduced Price Lunch	,	2012	,	Percent	,	0.03512
+ACADEMY 20	,	Eligible for Free Lunch	,	2012	,	Percent	,	0.09027
+ACADEMY 20	,	Eligible for Reduced Price Lunch	,	2012	,	Number	,	842
+ACADEMY 20	,	Eligible for Free or Reduced Lunch	,	2012	,	Percent	,	0.12539
+ACADEMY 20	,	Eligible for Free Lunch	,	2012	,	Number	,	2164
+ACADEMY 20	,	Eligible for Free or Reduced Lunch	,	2012	,	Number	,	3006
+ACADEMY 20	,	Eligible for Reduced Price Lunch	,	2013	,	Percent	,	0.03991
+ACADEMY 20	,	Eligible for Free or Reduced Lunch	,	2013	,	Percent	,	0.13173
+ACADEMY 20	,	Eligible for Free Lunch	,	2013	,	Percent	,	0.09183
+ACADEMY 20	,	Eligible for Free Lunch	,	2013	,	Number	,	2248
+ACADEMY 20	,	Eligible for Free or Reduced Lunch	,	2013	,	Number	,	3225
+ACADEMY 20	,	Eligible for Reduced Price Lunch	,	2013	,	Number	,	977
+BAYFIELD 10 JT-R	,	Eligible for Free Lunch	,	2014	,	Number	,	247
+BAYFIELD 10 JT-R	,	Eligible for Free or Reduced Lunch	,	2014	,	Number	,	382
+BAYFIELD 10 JT-R	,	Eligible for Free or Reduced Lunch	,	2014	,	Percent	,	0.2883
+BAYFIELD 10 JT-R	,	Eligible for Reduced Price Lunch	,	2014	,	Number	,	135
+BAYFIELD 10 JT-R	,	Eligible for Reduced Price Lunch	,	2014	,	Percent	,	0.10189
+BAYFIELD 10 JT-R	,	Eligible for Free Lunch	,	2014	,	Percent	,	0.18642
+BAYFIELD 10 JT-R	,	Eligible for Reduced Price Lunch	,	2012	,	Percent	,	0.11912
+BAYFIELD 10 JT-R	,	Eligible for Free Lunch	,	2012	,	Percent	,	0.21897
+BAYFIELD 10 JT-R	,	Eligible for Reduced Price Lunch	,	2012	,	Number	,	167
+BAYFIELD 10 JT-R	,	Eligible for Free or Reduced Lunch	,	2012	,	Percent	,	0.33809
+BAYFIELD 10 JT-R	,	Eligible for Free Lunch	,	2012	,	Number	,	307
+BAYFIELD 10 JT-R	,	Eligible for Free or Reduced Lunch	,	2012	,	Number	,	474
+BAYFIELD 10 JT-R	,	Eligible for Reduced Price Lunch	,	2013	,	Percent	,	0.09254
+BAYFIELD 10 JT-R	,	Eligible for Free or Reduced Lunch	,	2013	,	Percent	,	0.26791
+BAYFIELD 10 JT-R	,	Eligible for Free Lunch	,	2013	,	Percent	,	0.17537
+BAYFIELD 10 JT-R	,	Eligible for Free Lunch	,	2013	,	Number	,	235
+BAYFIELD 10 JT-R	,	Eligible for Free or Reduced Lunch	,	2013	,	Number	,	359
+BAYFIELD 10 JT-R	,	Eligible for Reduced Price Lunch	,	2013	,	Number	,	124
+CALHAN RJ-1	,	Eligible for Reduced Price Lunch	,	2013	,	Number	,	24
+CALHAN RJ-1	,	Eligible for Free or Reduced Lunch	,	2013	,	Number	,	197
+CALHAN RJ-1	,	Eligible for Free Lunch	,	2013	,	Number	,	173
+CALHAN RJ-1	,	Eligible for Free Lunch	,	2013	,	Percent	,	0.36653
+CALHAN RJ-1	,	Eligible for Free or Reduced Lunch	,	2013	,	Percent	,	0.41737
+CALHAN RJ-1	,	Eligible for Reduced Price Lunch	,	2013	,	Percent	,	0.05085
+CALHAN RJ-1	,	Eligible for Free or Reduced Lunch	,	2012	,	Number	,	232
+CALHAN RJ-1	,	Eligible for Reduced Price Lunch	,	2012	,	Number	,	26
+CALHAN RJ-1	,	Eligible for Free Lunch	,	2012	,	Number	,	206
+CALHAN RJ-1	,	Eligible for Free or Reduced Lunch	,	2012	,	Percent	,	0.4549
+CALHAN RJ-1	,	Eligible for Free or Reduced Lunch	,	2014	,	Percent	,	0.44708
+CALHAN RJ-1	,	Eligible for Free Lunch	,	2012	,	Percent	,	0.40392
+CALHAN RJ-1	,	Eligible for Reduced Price Lunch	,	2012	,	Percent	,	0.05098
+CALHAN RJ-1	,	Eligible for Reduced Price Lunch	,	2014	,	Percent	,	0.06479
+CALHAN RJ-1	,	Eligible for Free Lunch	,	2014	,	Percent	,	0.38229
+CALHAN RJ-1	,	Eligible for Free Lunch	,	2014	,	Number	,	177
+CALHAN RJ-1	,	Eligible for Reduced Price Lunch	,	2014	,	Number	,	30
+CALHAN RJ-1	,	Eligible for Free or Reduced Lunch	,	2014	,	Number	,	207
+DE BEQUE 49JT	,	Eligible for Reduced Price Lunch	,	2013	,	Number	,	14
+DE BEQUE 49JT	,	Eligible for Free or Reduced Lunch	,	2013	,	Number	,	71
+DE BEQUE 49JT	,	Eligible for Free Lunch	,	2013	,	Number	,	57
+DE BEQUE 49JT	,	Eligible for Free Lunch	,	2013	,	Percent	,	0.39041
+DE BEQUE 49JT	,	Eligible for Free or Reduced Lunch	,	2013	,	Percent	,	0.4863
+DE BEQUE 49JT	,	Eligible for Reduced Price Lunch	,	2013	,	Percent	,	0.09589
+DE BEQUE 49JT	,	Eligible for Free or Reduced Lunch	,	2012	,	Number	,	67
+DE BEQUE 49JT	,	Eligible for Reduced Price Lunch	,	2012	,	Number	,	12
+DE BEQUE 49JT	,	Eligible for Free Lunch	,	2012	,	Number	,	55
+DE BEQUE 49JT	,	Eligible for Free or Reduced Lunch	,	2012	,	Percent	,	0.4963
+DE BEQUE 49JT	,	Eligible for Free or Reduced Lunch	,	2014	,	Percent	,	0.43709
+DE BEQUE 49JT	,	Eligible for Free Lunch	,	2012	,	Percent	,	0.40741
+DE BEQUE 49JT	,	Eligible for Reduced Price Lunch	,	2012	,	Percent	,	0.08889
+DE BEQUE 49JT	,	Eligible for Reduced Price Lunch	,	2014	,	Percent	,	0.03974
+DE BEQUE 49JT	,	Eligible for Free Lunch	,	2014	,	Percent	,	0.39735
+DE BEQUE 49JT	,	Eligible for Free Lunch	,	2014	,	Number	,	60
+DE BEQUE 49JT	,	Eligible for Reduced Price Lunch	,	2014	,	Number	,	6
+DE BEQUE 49JT	,	Eligible for Free or Reduced Lunch	,	2014	,	Number	,	66
+EAGLE COUNTY RE 50	,	Eligible for Reduced Price Lunch	,	2013	,	Number	,	672
+EAGLE COUNTY RE 50	,	Eligible for Free or Reduced Lunch	,	2013	,	Number	,	2765
+EAGLE COUNTY RE 50	,	Eligible for Free Lunch	,	2013	,	Number	,	2093
+EAGLE COUNTY RE 50	,	Eligible for Free Lunch	,	2013	,	Percent	,	0.32101
+EAGLE COUNTY RE 50	,	Eligible for Free or Reduced Lunch	,	2013	,	Percent	,	0.42408
+EAGLE COUNTY RE 50	,	Eligible for Reduced Price Lunch	,	2013	,	Percent	,	0.10307
+EAGLE COUNTY RE 50	,	Eligible for Free or Reduced Lunch	,	2012	,	Number	,	2783
+EAGLE COUNTY RE 50	,	Eligible for Reduced Price Lunch	,	2012	,	Number	,	628
+EAGLE COUNTY RE 50	,	Eligible for Free Lunch	,	2012	,	Number	,	2155
+EAGLE COUNTY RE 50	,	Eligible for Free or Reduced Lunch	,	2012	,	Percent	,	0.4343
+EAGLE COUNTY RE 50	,	Eligible for Free or Reduced Lunch	,	2014	,	Percent	,	0.42172
+EAGLE COUNTY RE 50	,	Eligible for Free Lunch	,	2012	,	Percent	,	0.3363
+EAGLE COUNTY RE 50	,	Eligible for Reduced Price Lunch	,	2012	,	Percent	,	0.098
+EAGLE COUNTY RE 50	,	Eligible for Reduced Price Lunch	,	2014	,	Percent	,	0.10487
+EAGLE COUNTY RE 50	,	Eligible for Free Lunch	,	2014	,	Percent	,	0.31685
+EAGLE COUNTY RE 50	,	Eligible for Free Lunch	,	2014	,	Number	,	2127
+EAGLE COUNTY RE 50	,	Eligible for Reduced Price Lunch	,	2014	,	Number	,	704
+EAGLE COUNTY RE 50	,	Eligible for Free or Reduced Lunch	,	2014	,	Number	,	2831
