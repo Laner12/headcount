@@ -4,7 +4,6 @@ require "./lib/enrollment_repository"
 class EnrollmentRepositoryTest < Minitest::Test
 
   def test_things
-    skip
     er = EnrollmentRepository.new
     er.load_data({
       :enrollment => {
@@ -13,6 +12,7 @@ class EnrollmentRepositoryTest < Minitest::Test
     })
     enrollment = er.find_by_name("ACADEMY 20")
     # <Enrollment>
+    assert_equal "", enrollment
   end
 
   def test_searching_for_a_name_in_enrollment
