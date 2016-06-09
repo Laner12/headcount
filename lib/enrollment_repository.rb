@@ -7,18 +7,24 @@ class EnrollmentRepository
     @enrollments = enrollments
   end
 
-  def load_data(file_tree)
-    filepath = file_tree[:enrollment][:kindergarten]
-    years = CSV.foreach(filepath, headers: true, header_converters: :symbol).map do |row|
-      { :name => row[:location], row[:timeframe].to_i => row[:data].to_f}
-    end.group_by do |row|
+  def load_data(file_path)
+    path = file_path[:enrollment][:kindergarten]
+    csv_data = CSV.foreach(path, headers: true, header_converters: :symbol).map do |row|
+      { :name => row[:location].upcase, row[:timeframe].to_i => row[:data].to_f }
+    end
+
+    data_by_row = csv_data.group_by do |row|
       row[:name]
-    end.map do |name, years|
+    end
+
+    parsed_data = data_by_row.map do |name, years|
       merged = years.reduce({}, :merge)
       merged.delete(:name)
       { name: name,
         kindergarten_participation: merged }
-      end.each do |object|
+      end
+
+      parsed_data.each do |object|
         @enrollments << Enrollment.new(object)
       end
   end

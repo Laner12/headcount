@@ -1,12 +1,10 @@
 class Enrollment
-  attr_reader :data
+  attr_reader :data,
+              :name
 
   def initialize(data)
     @data = data
-  end
-
-  def name
-    data[:name].upcase
+    @name = data[:name].upcase
   end
 
   def kindergarten_participation_by_year
