@@ -18,8 +18,8 @@ class EnrollmentRepository
       merged.delete(:name)
       { name: name,
         kindergarten_participation: merged }
-      end.each do |e|
-        @enrollments << Enrollment.new(e)
+      end.each do |object|
+        @enrollments << Enrollment.new(object)
       end
   end
 

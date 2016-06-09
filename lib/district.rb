@@ -1,21 +1,14 @@
 class District
   attr_reader :attributes
+  attr_accessor :enrollment
 
 
-  def initialize(attributes) #district_repo)
+  def initialize(attributes, enrollment = nil)
     @attributes = attributes
-    # @district_repo = district_repo
+    @enrollment = enrollment
   end
 
   def name
     @attributes[:name].upcase
   end
-
-  # def enrollment
-  #     #travers the self branch
-  #     #go to the enrollment
-  # end
-
-
-
 end
