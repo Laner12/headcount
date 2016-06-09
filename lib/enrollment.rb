@@ -6,11 +6,11 @@ class Enrollment
   end
 
   def name
-    @data[:name].upcase
+    data[:name].upcase
   end
 
   def kindergarten_participation_by_year
-    @data[:kindergarten_participation].reduce({}) do |result, pair|
+    data[:kindergarten_participation].reduce({}) do |result, pair|
       result.merge({pair.first => truncate_float(pair.last)})
     end
   end
@@ -20,6 +20,8 @@ class Enrollment
   end
 
   def kindergarten_participation_in_year(year)
-      kindergarten_participation_by_year[year]
+    if data[:kindergarten_participation][year] != nil
+      truncate_float(data[:kindergarten_participation][year])
+    end
   end
 end
