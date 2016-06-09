@@ -1,7 +1,7 @@
 {
   "Unit Tests": {
     "coverage": {
-      "/Users/raphabarbo/turing/1module/projects/headcount/test/district_test.rb": [
+      "/Users/LaneWinham/turing/module1/projects/headcount/test/district_test.rb": [
         1,
         1,
         null,
@@ -17,7 +17,7 @@
         null,
         null
       ],
-      "/Users/raphabarbo/turing/1module/projects/headcount/test/enrollment_repository_test.rb": [
+      "/Users/LaneWinham/turing/module1/projects/headcount/test/enrollment_repository_test.rb": [
         1,
         1,
         null,
@@ -45,7 +45,7 @@
         null,
         null
       ],
-      "/Users/raphabarbo/turing/1module/projects/headcount/test/enrollment_test.rb": [
+      "/Users/LaneWinham/turing/module1/projects/headcount/test/enrollment_test.rb": [
         1,
         1,
         null,
@@ -95,7 +95,7 @@
         null,
         null
       ],
-      "/Users/raphabarbo/turing/1module/projects/headcount/test/headcount_analyst_test.rb": [
+      "/Users/LaneWinham/turing/module1/projects/headcount/test/headcount_analyst_test.rb": [
         1,
         1,
         1,
@@ -143,10 +143,11 @@
         null,
         null
       ],
-      "/Users/raphabarbo/turing/1module/projects/headcount/lib/headcount_analyst.rb": [
+      "/Users/LaneWinham/turing/module1/projects/headcount/lib/headcount_analyst.rb": [
         1,
         1,
         null,
+        1,
         1,
         null,
         1,
@@ -164,8 +165,6 @@
         2,
         2,
         2,
-        2,
-        null,
         null,
         null,
         1,
@@ -175,12 +174,13 @@
         1,
         1,
         null,
-        12,
         1,
+        11,
+        null,
         null,
         null
       ]
     },
-    "timestamp": 1465505259
+    "timestamp": 1465508248
   }
 }

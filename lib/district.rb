@@ -3,7 +3,6 @@ class District
               :enrollment,
               :attributes
 
-
   def initialize(attributes, enrollment = nil)
     @attributes = attributes
     @enrollment = enrollment

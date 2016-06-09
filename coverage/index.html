@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-06-09T14:47:39-06:00">2016-06-09T14:47:39-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-06-09T15:37:28-06:00">2016-06-09T15:37:28-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.26
+         1.24
        </span>
     </span> hits/line)
   </h2>
@@ -51,17 +51,17 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#914af3fa1651ae8b4e2cd7dac26bc888e3fe5a61" class="src_link" title="lib/headcount_analyst.rb">lib/headcount_analyst.rb</a></td>
+        <td class="strong"><a href="#2f5e1daa9fc168e9e3fba0f0f9a3ee93e772d89a" class="src_link" title="lib/headcount_analyst.rb">lib/headcount_analyst.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>35</td>
         <td>23</td>
         <td>23</td>
         <td>0</td>
-        <td>2.0</td>
+        <td>1.9</td>
       </tr>
       
       <tr>
-        <td class="strong"><a href="#f9b610e73bb484c814794791ba340b080bca0cca" class="src_link" title="test/district_test.rb">test/district_test.rb</a></td>
+        <td class="strong"><a href="#e2cb6b2e751c9d5833a524d0e86b5b8a6fec8048" class="src_link" title="test/district_test.rb">test/district_test.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>14</td>
         <td>9</td>
@@ -71,7 +71,7 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#e54ac3240c2cef0266f8f3e0b28382b92d55c6f9" class="src_link" title="test/enrollment_repository_test.rb">test/enrollment_repository_test.rb</a></td>
+        <td class="strong"><a href="#5aa68c72172ae2d38be82892f3262e8ff1d74719" class="src_link" title="test/enrollment_repository_test.rb">test/enrollment_repository_test.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>26</td>
         <td>14</td>
@@ -81,7 +81,7 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#cc2248ca2db5ca8ea81256082e3e2fddde94a9f7" class="src_link" title="test/enrollment_test.rb">test/enrollment_test.rb</a></td>
+        <td class="strong"><a href="#c2a744d5b3cb6eb8345d03005eef728ed315321f" class="src_link" title="test/enrollment_test.rb">test/enrollment_test.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>48</td>
         <td>21</td>
@@ -91,7 +91,7 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#69edb53ac6d003a9561d7353c302acfae7c637b4" class="src_link" title="test/headcount_analyst_test.rb">test/headcount_analyst_test.rb</a></td>
+        <td class="strong"><a href="#07f51d2f92ea4ea972a17f9bb240cade7e8e4071" class="src_link" title="test/headcount_analyst_test.rb">test/headcount_analyst_test.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>46</td>
         <td>21</td>
@@ -116,7 +116,7 @@
     
       <div class="source_files">
       
-        <div class="source_table" id="914af3fa1651ae8b4e2cd7dac26bc888e3fe5a61">
+        <div class="source_table" id="2f5e1daa9fc168e9e3fba0f0f9a3ee93e772d89a">
   <div class="header">
     <h3>lib/headcount_analyst.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
@@ -139,7 +139,7 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">class HeadcountAnalyst</code>
+          <code class="ruby">require_relative &quot;truncate&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="3">
@@ -151,181 +151,181 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  attr_reader :district_repo</code>
+          <code class="ruby">class HeadcountAnalyst</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attr_reader :dr</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">  def initialize(dr)</code>
+          <code class="ruby">  def initialize(district_repository)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="7">
+        <li class="covered" data-hits="3" data-linenumber="8">
           <span class="hits">3</span>
           
-          <code class="ruby">    @district_repo = dr</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @dr = district_repository</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
           <code class="ruby">  def kindergarten_participation_rate_variation(first_district, second_district)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="11">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    district_one = @district_repo.find_by_name(first_district)</code>
-        </li>
-      
         <li class="covered" data-hits="2" data-linenumber="12">
           <span class="hits">2</span>
           
-          <code class="ruby">    district_one_years = district_one.enrollment.data[:kindergarten_participation].length</code>
+          <code class="ruby">    district_one = @dr.find_by_name(first_district)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="13">
           <span class="hits">2</span>
           
-          <code class="ruby">    district_one_total_participation = district_one.enrollment.data[:kindergarten_participation].values.reduce(:+)</code>
+          <code class="ruby">    district_one_years = district_one.enrollment.data[:kindergarten_participation].length</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="14">
           <span class="hits">2</span>
           
+          <code class="ruby">    district_one_total_participation = district_one.enrollment.data[:kindergarten_participation].values.reduce(:+)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="15">
+          <span class="hits">2</span>
+          
           <code class="ruby">    district_one_average = district_one_total_participation/district_one_years</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="16">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    district_two = @district_repo.find_by_name(second_district[:against])</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="17">
           <span class="hits">2</span>
           
-          <code class="ruby">    district_two_years = district_two.enrollment.data[:kindergarten_participation].length</code>
+          <code class="ruby">    district_two = @dr.find_by_name(second_district[:against])</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="18">
           <span class="hits">2</span>
           
-          <code class="ruby">    district_two_total_participation = district_two.enrollment.data[:kindergarten_participation].values.reduce(:+)</code>
+          <code class="ruby">    district_two_years = district_two.enrollment.data[:kindergarten_participation].length</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="19">
           <span class="hits">2</span>
           
-          <code class="ruby">    district_two_average = district_two_total_participation/district_two_years</code>
+          <code class="ruby">    district_two_total_participation = district_two.enrollment.data[:kindergarten_participation].values.reduce(:+)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="20">
           <span class="hits">2</span>
           
-          <code class="ruby">    rate_variation = district_one_average/ district_two_average</code>
+          <code class="ruby">    district_two_average = district_two_total_participation/district_two_years</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="21">
           <span class="hits">2</span>
           
-          <code class="ruby">    rate = rate_variation.round(3)</code>
+          <code class="ruby">    rate_variation = Truncate.truncate_float(district_one_average/ district_two_average)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby">    # needs the trucate method</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
           <code class="ruby">  def kindergarten_participation_rate_variation_trend(first_district, second_district)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">    district_one = @district_repo.find_by_name(first_district)</code>
+          <code class="ruby">    district_one = @dr.find_by_name(first_district)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
           <code class="ruby">    district_one_years = district_one.enrollment.data[:kindergarten_participation]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    district_two = @dr.find_by_name(second_district[:against])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
-          <code class="ruby">    district_two = @district_repo.find_by_name(second_district[:against])</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="30">
-          <span class="hits">1</span>
-          
           <code class="ruby">    district_two_years = district_two.enrollment.data[:kindergarten_participation]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="32">
-          <span class="hits">12</span>
-          
-          <code class="ruby">    varitation_trend = district_one_years.merge!(district_two_years) { |key , onekey, twokey| ((onekey / twokey) * 1000).floor / 1000.to_f}</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
-          <code class="ruby">    trend = varitation_trend.sort.to_h</code>
+          <code class="ruby">    varitation_trend = district_one_years.merge!(district_two_years) do |key , onekey, twokey| </code>
+        </li>
+      
+        <li class="covered" data-hits="11" data-linenumber="32">
+          <span class="hits">11</span>
+          
+          <code class="ruby">      Truncate.truncate_float(onekey / twokey)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
@@ -344,7 +344,7 @@
   </pre>
 </div>
       
-        <div class="source_table" id="f9b610e73bb484c814794791ba340b080bca0cca">
+        <div class="source_table" id="e2cb6b2e751c9d5833a524d0e86b5b8a6fec8048">
   <div class="header">
     <h3>test/district_test.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
@@ -446,7 +446,7 @@
   </pre>
 </div>
       
-        <div class="source_table" id="e54ac3240c2cef0266f8f3e0b28382b92d55c6f9">
+        <div class="source_table" id="5aa68c72172ae2d38be82892f3262e8ff1d74719">
   <div class="header">
     <h3>test/enrollment_repository_test.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
@@ -620,7 +620,7 @@
   </pre>
 </div>
       
-        <div class="source_table" id="cc2248ca2db5ca8ea81256082e3e2fddde94a9f7">
+        <div class="source_table" id="c2a744d5b3cb6eb8345d03005eef728ed315321f">
   <div class="header">
     <h3>test/enrollment_test.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
@@ -926,7 +926,7 @@
   </pre>
 </div>
       
-        <div class="source_table" id="69edb53ac6d003a9561d7353c302acfae7c637b4">
+        <div class="source_table" id="07f51d2f92ea4ea972a17f9bb240cade7e8e4071">
   <div class="header">
     <h3>test/headcount_analyst_test.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
