@@ -15,9 +15,12 @@ class DistrictRepository
       { :name => row[:location]}
     end.uniq
       name_lines.each do |name|
-        @districts << District.new(name)
+        @districts << District.new(name) #,self)
+        # @districts[:name] = District.new(name)
+
       end
       @enrollment_repo.load_data(file_tree)
+      # binding.pry
   end
 
   def find_by_name(name)
