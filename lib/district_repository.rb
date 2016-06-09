@@ -7,6 +7,7 @@ class DistrictRepository
   def initialize(districts = [])
     @districts = districts
     @enrollment_repo = EnrollmentRepository.new
+    # @ha = HeadcountAnalyst.new(self)
   end
 
   def load_data(file_tree)
