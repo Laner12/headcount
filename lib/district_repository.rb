@@ -14,7 +14,7 @@ class DistrictRepository
     filepath = file_tree[:enrollment][:kindergarten]
     @enrollment_repo.load_data(file_tree)
     name_lines = CSV.foreach(filepath, headers: true, header_converters: :symbol).map do |row|
-      { :name => row[:location]}
+      { :name => row[:location].upcase}
     end.uniq
       name_lines.each do |object|
         enrollment = enrollment_repo.find_by_name(object[:name])
