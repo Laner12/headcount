@@ -3,7 +3,7 @@ require_relative "test_helper"
 
 class EnrollmentRepositoryTest < Minitest::Test
 
-  def test_things
+  def test_it_creates_an_instance_of_enrollment
     er = EnrollmentRepository.new
     er.load_data({
       :enrollment => {

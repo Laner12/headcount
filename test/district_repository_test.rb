@@ -3,7 +3,7 @@ require_relative "test_helper"
 
 class DistrictRepositoryTest < Minitest::Test
 
-  def test_it_passes_
+  def test_it_is_an_instance_of_district
     dr = DistrictRepository.new
     dr.load_data({
       :enrollment => {
@@ -31,5 +31,17 @@ class DistrictRepositoryTest < Minitest::Test
     dr = DistrictRepository.new([d1, d2, d3])
 
     assert_equal [d1, d2, d3], dr.find_all_matching("a")
+  end
+
+  def test_searching_for_a_object_in_enrollment
+    dr = DistrictRepository.new
+    dr.load_data({
+      :enrollment => {
+        :kindergarten => "./data/Kindergartners in full-day program.csv"
+      }
+    })
+    district = dr.find_by_name("ACADEMY 20")
+
+    assert_equal 0.436, district.enrollment.kindergarten_participation_in_year(2010)
   end
 end

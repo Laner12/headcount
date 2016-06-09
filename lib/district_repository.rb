@@ -3,21 +3,23 @@ require_relative "enrollment_repository"
 require "csv"
 
 class DistrictRepository
+  attr_reader :enrollment_repo
 
   def initialize(districts = [])
-    @districts = districts
+    @districts       = districts
     @enrollment_repo = EnrollmentRepository.new
   end
 
   def load_data(file_tree)
     filepath = file_tree[:enrollment][:kindergarten]
+    @enrollment_repo.load_data(file_tree)
     name_lines = CSV.foreach(filepath, headers: true, header_converters: :symbol).map do |row|
       { :name => row[:location]}
     end.uniq
-      name_lines.each do |name|
-        @districts << District.new(name)
+      name_lines.each do |object|
+        enrollment = enrollment_repo.find_by_name(object[:name])
+        @districts << District.new(object, enrollment)
       end
-      @enrollment_repo.load_data(file_tree)
   end
 
   def find_by_name(name)

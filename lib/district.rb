@@ -1,7 +1,11 @@
 class District
   attr_reader :attributes
-  def initialize(attributes)
+  attr_accessor :enrollment
+
+
+  def initialize(attributes, enrollment = nil)
     @attributes = attributes
+    @enrollment = enrollment
   end
 
   def name
