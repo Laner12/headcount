@@ -5,7 +5,7 @@ require_relative "../lib/headcount_analyst"
 
 class HeadcountAnalystTest < Minitest::Test
 
-  def test_one
+  def test_comparing_variation_with_one_school_and_state_data
   dr = DistrictRepository.new
   dr.load_data({
     :enrollment => {
@@ -17,7 +17,7 @@ class HeadcountAnalystTest < Minitest::Test
   assert_equal 0.766, ha.kindergarten_participation_rate_variation('ACADEMY 20', :against => 'COLORADO')
   end
 
-  def test_two
+  def test_comparing_variation_with_two_school_data_sets
     dr = DistrictRepository.new
     dr.load_data({
       :enrollment => {
@@ -25,12 +25,12 @@ class HeadcountAnalystTest < Minitest::Test
       }
     })
     ha = HeadcountAnalyst.new(dr)
-    
+
     assert_equal 0.447, ha.kindergarten_participation_rate_variation('ACADEMY 20', :against => 'YUMA SCHOOL DISTRICT 1')
   end
 
 
-  def test_three
+  def test_comparing_variation_trend_with_school_and_state
     dr = DistrictRepository.new
     dr.load_data({
       :enrollment => {

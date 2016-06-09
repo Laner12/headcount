@@ -23,4 +23,17 @@ class EnrollmentRepositoryTest < Minitest::Test
 
     assert_equal e3, er.find_by_name("ADAMS")
   end
+
+  def test_it_takes_multiple_paths
+    er = EnrollmentRepository.new
+    er.load_data({
+      :enrollment => {
+        :kindergarten => "./data/Kindergartners in full-day program.csv",
+        :high_school_graduation => "./data/High school graduation rates.csv"
+      }
+    })
+    enrollment = er.find_by_name("ACADEMY 20")
+
+    assert_instance_of Enrollment, enrollment
+  end
 end
