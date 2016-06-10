@@ -20,4 +20,16 @@ class Enrollment
       Truncate.truncate_float(data[:kindergarten_participation][year])
     end
   end
+
+  def graduation_rate_by_year
+    data[:high_school_graduation].reduce({}) do |result, pair|
+      result.merge({pair.first => Truncate.truncate_float(pair.last)})
+    end
+  end
+
+  def graduation_rate_in_year(year)
+    if data[:high_school_graduation][year] != nil
+      Truncate.truncate_float(data[:high_school_graduation][year])
+    end
+  end
 end

@@ -8,12 +8,19 @@ class EnrollmentRepository
   end
 
   def load_data(file_path)
-    path = file_path[:enrollment][:kindergarten]
-    csv_data = CSV.foreach(path, headers: true, header_converters: :symbol).map do |row|
-      { :name => row[:location].upcase, row[:timeframe].to_i => row[:data].to_f }
+    data = []
+     file_path[:enrollment].each_key do |key|
+      path = file_path[:enrollment][key]
+      data << CSV.foreach(path, headers: true, header_converters: :symbol).map do |row|
+        { :name => row[:location].upcase, row[:timeframe].to_i => row[:data].to_f }
+      end
+      data
+      # binding.pry
     end
+    # needs to be dynamic
+    # needs to load all the values of enrollment
 
-    data_by_row = csv_data.group_by do |row|
+    data_by_row = data.group_by do |row|
       row[:name]
     end
 
@@ -22,6 +29,7 @@ class EnrollmentRepository
       merged.delete(:name)
       { name: name,
         kindergarten_participation: merged }
+        # needs to be dynamic
       end
 
       parsed_data.each do |object|
