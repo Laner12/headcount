@@ -43,6 +43,19 @@
         null,
         1,
         null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
         null
       ],
       "/Users/LaneWinham/turing/module1/projects/headcount/test/enrollment_test.rb": [
@@ -181,6 +194,6 @@
         null
       ]
     },
-    "timestamp": 1465508248
+    "timestamp": 1465509722
   }
 }

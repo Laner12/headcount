@@ -3,7 +3,7 @@ require_relative "test_helper"
 
 class EnrollmentTest < Minitest::Test
 
-  def test_returning_by_year_data
+  def test_returning_data_by_year_in_percentage
     e = Enrollment.new({:name => "ACADEMY 20",
                         :kindergarten_participation =>
                         {2010 => 0.3915, 2011 => 0.35356, 2012 => 0.2677}})
@@ -22,7 +22,7 @@ class EnrollmentTest < Minitest::Test
     assert_equal ({2010=>0.0}), e.kindergarten_participation_by_year
   end
 
-  def test_returning_in_year_data
+  def test_returning_data_year_for_certain_year
     e = Enrollment.new({:name => "ACADEMY 20",
                         :kindergarten_participation =>
                         {2010 => 0.3915, 2011 => 0.35356, 2012 => 0.2677}})
@@ -40,7 +40,7 @@ class EnrollmentTest < Minitest::Test
     assert_equal nil, return_value
   end
 
-  def test_name_method
+  def test_name_method_for_instance_of_enrollment
     e = Enrollment.new({:name => "ACADEMY 20"})
 
     assert_equal "ACADEMY 20", e.name

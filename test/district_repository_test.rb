@@ -33,7 +33,7 @@ class DistrictRepositoryTest < Minitest::Test
     assert_equal [d1, d2, d3], dr.find_all_matching("a")
   end
 
-  def test_searching_for_a_object_in_enrollment
+  def test_searching_for_a_object_of_district_for_participation_percent
     dr = DistrictRepository.new
     dr.load_data({
       :enrollment => {
