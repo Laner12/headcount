@@ -3,7 +3,8 @@ require "csv"
 require "pry"
 
 class EnrollmentRepository
-  attr_reader :grade_levels
+  attr_reader :grade_levels,
+              :enrollments
 
   def initialize(enrollments = {})
     @enrollments  = enrollments
@@ -41,4 +42,5 @@ class EnrollmentRepository
   def find_by_name(name)
       @enrollments[name]
   end
+
 end
