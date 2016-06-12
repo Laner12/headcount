@@ -1,11 +1,14 @@
 class District
   attr_reader :name,
-              :enrollment,
+              :district_repo,
               :attributes
 
-  def initialize(attributes, enrollment = nil)
+  def initialize(attributes, district_repo = nil)
     @attributes = attributes
-    @enrollment = enrollment
-    @name       = attributes[:name].upcase
+    @district_repo = district_repo
+  end
+
+  def name
+    attributes[:name].upcase
   end
 end

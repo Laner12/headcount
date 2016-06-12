@@ -3,59 +3,39 @@ require_relative "enrollment_repository"
 require "csv"
 
 class DistrictRepository
-
-  attr_reader :enrollment_repo,
-              :grade_levels,
+  attr_reader :enrollment,
               :districts
 
-
   def initialize(districts = {})
-    @districts       = districts
-    @enrollment_repo = EnrollmentRepository.new
+    @districts  = districts
+    @enrollment = EnrollmentRepository.new
   end
 
+
   def load_data(file_path)
-    @enrollment_repo.load_data(file_path)
-    file_path.values[0].values.each_with_index do |key, index|
-      CSV.foreach(key, headers: true, header_converters: :symbol) do |row|
-        # grade = grade_levels[file_path.values[0].keys[index]]
-        name = row[:location].upcase
-        data = { :name => name}
-          check_objects = find_by_name(name)
-        if check_objects == nil
-          @districts[name] = District.new(data, enrollment_repo ) #add enrollment_repo
-          # binding.pry
-        # else
-        #   @districts[name] = District.new(data ) #add enrollment_repo
-        end
+  file = file_path[:enrollment][:kindergarten]
+    CSV.foreach(file, headers: true, header_converters: :symbol) do |row|
+      name = row[:location]
+      data = { :name => name}
+      check_objects = find_by_name(name)
+      if check_objects == nil
+      districts[name] = District.new(data, self)
       end
     end
   end
-    # .uniq
-      # name_lines.each do |object|
-      #   enrollment = enrollment_repo.find_by_name(object[:name])
-      #   @districts << District.new(object, enrollment)
-      # end
-
-  # def add_grade(check_objects)
-  #   if grade == :kindergarten_participation
-  #     check_objects.kindergarten_participation.merge!({year => percent})
-  #   else
-  #     check_objects.high_school_graduation.merge!({year => percent})
-  #   end
-  # end
 
   def find_by_name(name)
-    @districts[name]
+    string = name.to_s
+    @districts[string.upcase]
   end
 
   def find_all_matching(fragment)
+    frag = fragment.to_s
     find = @districts.keys.select do |district|
-      district.start_with?(fragment.upcase)
+      district.start_with?(frag.upcase)
     end
-    find.map do |district|
-      @districts[district]
-
+    find.map do |name|
+      find_by_name(name)
     end
   end
 end

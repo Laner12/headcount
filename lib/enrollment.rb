@@ -1,18 +1,16 @@
 require_relative "truncate"
 
 class Enrollment
-  attr_reader :data,
-              :name
+  attr_reader :data
 
   def initialize(data)
     @data = data
-    # binding.pry
-    # @name = data[:name].upcase
   end
 
   def name
     data[:name].upcase
   end
+  
   def high_school_graduation
     return data[:high_school_graduation] if high_school_graduation_data_exists?
     data[:high_school_graduation] = Hash.new
