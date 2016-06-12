@@ -1,45 +1,45 @@
 require_relative "enrollment"
 require "csv"
+require "pry"
 
 class EnrollmentRepository
+  attr_reader   :grade_levels
 
-  def initialize(enrollments = [])
+  def initialize(enrollments = {})
     @enrollments = enrollments
+    @grade_levels =  {
+      :kindergarten => :kindergarten_participation,
+      :high_school_graduation => :high_school_graduation}
   end
 
-  def load_data(file_path)
-    data = []
-     file_path[:enrollment].each_key do |key|
-      path = file_path[:enrollment][key]
-      data << CSV.foreach(path, headers: true, header_converters: :symbol).map do |row|
-        { :name => row[:location].upcase, row[:timeframe].to_i => row[:data].to_f }
+    def load_data(file_path)
+      file_path.values[0].values.each_with_index do |key, index|
+        CSV.foreach(key, headers: true, header_converters: :symbol) do |row|
+          # binding.pry
+          grade = grade_levels[file_path.values[0].keys[index]]
+          name = row[:location].upcase
+          year = row[:timeframe].to_i
+          percent = row[:data].to_f
+          data = { :name => name, grade => {year => percent}}
+          check_objects = find_by_name(name)
+          if check_objects == nil
+            @enrollments[name] = Enrollment.new(data)
+          else
+              add_grade(check_objects, grade, year, percent)
+          end
+        end
       end
-      data
-      # binding.pry
     end
-    # needs to be dynamic
-    # needs to load all the values of enrollment
 
-    data_by_row = data.group_by do |row|
-      row[:name]
+    def add_grade(check_objects, grade, year, percent)
+      if grade == :kindergarten_participation
+        check_objects.kindergarten_participation.merge!({year => percent})
+      else
+        check_objects.high_school_graduation.merge!({year => percent})
+      end
     end
 
-    parsed_data = data_by_row.map do |name, years|
-      merged = years.reduce({}, :merge)
-      merged.delete(:name)
-      { name: name,
-        kindergarten_participation: merged }
-        # needs to be dynamic
-      end
-
-      parsed_data.each do |object|
-        @enrollments << Enrollment.new(object)
-      end
-  end
-
-  def find_by_name(name)
-    @enrollments.detect do |enrollment|
-      enrollment.data[:name] == name
+    def find_by_name(name)
+        @enrollments[name]
     end
   end
-end

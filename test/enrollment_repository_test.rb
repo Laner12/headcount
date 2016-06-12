@@ -4,7 +4,6 @@ require_relative "test_helper"
 class EnrollmentRepositoryTest < Minitest::Test
 
   def test_it_creates_an_instance_of_enrollment
-    skip
     er = EnrollmentRepository.new
     er.load_data({
       :enrollment => {
@@ -20,7 +19,9 @@ class EnrollmentRepositoryTest < Minitest::Test
     e1 = Enrollment.new({:name => "ACADEMY 20"})
     e2 = Enrollment.new({:name => "ACADEMY 30"})
     e3 = Enrollment.new({:name => "ADAMS"})
-    er = EnrollmentRepository.new([e1, e2, e3])
+    er = EnrollmentRepository.new({"ACADEMY 20" => e1,
+                                   "ACADEMY 30" => e2,
+                                   "ADAMS" => e3})
 
     assert_equal e3, er.find_by_name("ADAMS")
   end
@@ -41,6 +42,6 @@ class EnrollmentRepositoryTest < Minitest::Test
               2014 => 0.898,
             }
 
-    assert_instance_of result, enrollment.graduation_rate_by_year
+    assert_equal result, enrollment.graduation_rate_by_year
   end
 end
