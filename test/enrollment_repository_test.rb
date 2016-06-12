@@ -19,7 +19,9 @@ class EnrollmentRepositoryTest < Minitest::Test
     e1 = Enrollment.new({:name => "ACADEMY 20"})
     e2 = Enrollment.new({:name => "ACADEMY 30"})
     e3 = Enrollment.new({:name => "ADAMS"})
-    er = EnrollmentRepository.new([e1, e2, e3])
+    er = EnrollmentRepository.new({"ACADEMY 20" => e1,
+                                   "ACADEMY 30" => e2,
+                                   "ADAMS" => e3})
 
     assert_equal e3, er.find_by_name("ADAMS")
   end
@@ -33,7 +35,13 @@ class EnrollmentRepositoryTest < Minitest::Test
       }
     })
     enrollment = er.find_by_name("ACADEMY 20")
+    result ={ 2010 => 0.895,
+              2011 => 0.895,
+              2012 => 0.889,
+              2013 => 0.913,
+              2014 => 0.898,
+            }
 
-    assert_instance_of Enrollment, enrollment
+    assert_equal result, enrollment.graduation_rate_by_year
   end
 end
