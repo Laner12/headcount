@@ -10,7 +10,7 @@ class Enrollment
   def name
     data[:name].upcase
   end
-  
+
   def high_school_graduation
     return data[:high_school_graduation] if high_school_graduation_data_exists?
     data[:high_school_graduation] = Hash.new
@@ -45,6 +45,6 @@ class Enrollment
   end
 
   def kindergarten_participation
-    data{:kindergarten_participation}
+    data[:kindergarten_participation]
   end
 end

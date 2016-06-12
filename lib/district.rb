@@ -11,4 +11,9 @@ class District
   def name
     attributes[:name].upcase
   end
+
+  def enrollment
+    district_repo.find_enrollment(attributes[:name])
+  end
+
 end
