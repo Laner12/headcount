@@ -19,7 +19,9 @@ class DistrictRepositoryTest < Minitest::Test
     d1 = District.new({:name => "ACADEMY 20"})
     d2 = District.new({:name => "ACADEMY 30"})
     d3 = District.new({:name => "ADAMS"})
-    dr = DistrictRepository.new([d1, d2, d3])
+    dr = DistrictRepository.new({"ACADEMY 20" => d1,
+                                 "ACADEMY 30" => d2,
+                                 "ADAMS" => d3 })
 
     assert_equal d3, dr.find_by_name("ADAMS")
   end
@@ -28,7 +30,9 @@ class DistrictRepositoryTest < Minitest::Test
     d1 = District.new({:name => "ACADEMY 20"})
     d2 = District.new({:name => "ACADEMY 30"})
     d3 = District.new({:name => "ADAMS"})
-    dr = DistrictRepository.new([d1, d2, d3])
+    dr = DistrictRepository.new({"ACADEMY 20" => d1,
+                                 "ACADEMY 30" => d2,
+                                 "ADAMS" => d3 })
 
     assert_equal [d1, d2, d3], dr.find_all_matching("a")
   end
