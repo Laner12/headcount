@@ -10,11 +10,13 @@ class HeadcountAnalyst
 
   def kindergarten_participation_rate_variation(first_district, second_district)
     district_one = @dr.find_by_name(first_district)
+    # binding.pry
     district_one_years = district_one.enrollment.data[:kindergarten_participation].length
     district_one_total_participation = district_one.enrollment.data[:kindergarten_participation].values.reduce(:+)
     district_one_average = district_one_total_participation/district_one_years
 
     district_two = @dr.find_by_name(second_district[:against])
+    # binding.pry
     district_two_years = district_two.enrollment.data[:kindergarten_participation].length
     district_two_total_participation = district_two.enrollment.data[:kindergarten_participation].values.reduce(:+)
     district_two_average = district_two_total_participation/district_two_years

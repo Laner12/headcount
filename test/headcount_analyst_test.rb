@@ -6,7 +6,7 @@ require_relative "../lib/headcount_analyst"
 class HeadcountAnalystTest < Minitest::Test
 
   def test_comparing_variation_with_one_school_and_state_data
-    skip
+
   dr = DistrictRepository.new
   dr.load_data({
     :enrollment => {
@@ -19,7 +19,6 @@ class HeadcountAnalystTest < Minitest::Test
   end
 
   def test_comparing_variation_with_two_school_data_sets
-    skip
     dr = DistrictRepository.new
     dr.load_data({
       :enrollment => {
@@ -33,7 +32,6 @@ class HeadcountAnalystTest < Minitest::Test
 
 
   def test_comparing_variation_trend_with_school_and_state
-    skip
     dr = DistrictRepository.new
     dr.load_data({
       :enrollment => {

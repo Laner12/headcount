@@ -16,7 +16,7 @@ class DistrictRepository
   enrollment_repo.load_data(file_path)
   file = file_path[:enrollment][:kindergarten]
     CSV.foreach(file, headers: true, header_converters: :symbol) do |row|
-      name = row[:location]
+      name = row[:location].upcase
       data = { :name => name}
       check_objects = find_by_name(name)
       if check_objects == nil
@@ -40,8 +40,8 @@ class DistrictRepository
     end
   end
 
-  def find_enrollment(name)
-   enrollment_repo.enrollments[name]
+  def enrollment_connector(name)
+   enrollment_repo.enrollments[name.upcase]
   end
 
 end
