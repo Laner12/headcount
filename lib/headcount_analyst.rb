@@ -2,7 +2,6 @@ require_relative "district_repository"
 require_relative "truncate"
 
 class HeadcountAnalyst
-
   attr_reader :dr
 
   def initialize(district_repository)
@@ -71,25 +70,23 @@ class HeadcountAnalyst
   end
 
   def kindergarten_participation_correlates_with_high_school_graduation(district)
-      if district.is_a?(String)
-        district = district
-      elsif district.keys.first == :for
-        district = district[:for]
-      elsif district.keys.first == :across
-        district = district[:across]
-      else
-        district = district
-      end
+    if district.is_a?(String)
+      district = district
+    elsif district.keys.first == :for
+      district = district[:for]
+    elsif district.keys.first == :across
+      district = district[:across]
+    else
+    end
 
-      if district.is_a?(Array)
-        return comparing_states(district)
-      elsif district != "STATEWIDE"
-        return correlating(district)
-      elsif district == "STATEWIDE"
-        return comparing_states
-      else
-        correlating(district)
-      end
+    if district.is_a?(Array)
+      return comparing_states(district)
+    elsif district != "STATEWIDE"
+      return correlating(district)
+    elsif district == "STATEWIDE"
+      return comparing_states
+    else
+    end
   end
 
   def correlating(district)

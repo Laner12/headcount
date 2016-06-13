@@ -91,7 +91,6 @@ class HeadcountAnalystTest < Minitest::Test
         :high_school_graduation => "./data/High school graduation rates.csv"
       }
       })
-      ha = HeadcountAnalyst.new(dr)
 
       assert_equal ["COLORADO", "ACADEMY 20", "ADAMS COUNTY 14"], dr.collect_district_names[0..2]
       assert_equal 181, dr.collect_district_names.count
@@ -107,7 +106,10 @@ class HeadcountAnalystTest < Minitest::Test
       })
       ha = HeadcountAnalyst.new(dr)
 
-      refute  ha.kindergarten_participation_correlates_with_high_school_graduation(
+      assert_equal false, ha.kindergarten_participation_correlates_with_high_school_graduation(
       :across => ['ACADEMY 20', 'PUEBLO CITY 60', 'AGATE 300', 'ADAMS COUNTY 14'])
+
+      assert_equal true, ha.kindergarten_participation_correlates_with_high_school_graduation(
+      :across => ['ACADEMY 20', 'ACADEMY 20', 'ACADEMY 20', 'ACADEMY 20'])
   end
 end
