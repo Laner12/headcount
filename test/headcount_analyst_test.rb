@@ -59,6 +59,7 @@ class HeadcountAnalystTest < Minitest::Test
   end
 
   def test_kindergarten_participation_correlates_with_high_school_graduation
+    skip
     dr = DistrictRepository.new
     dr.load_data({
       :enrollment => {
@@ -70,6 +71,4 @@ class HeadcountAnalystTest < Minitest::Test
 
     assert_equal true, ha.kindergarten_participation_correlates_with_high_school_graduation(for: 'ACADEMY 20')
   end
-
-
 end
