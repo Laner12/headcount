@@ -23,7 +23,7 @@ class EnrollmentRepository
         data = { :name => name, grade => {year => percent}}
         check_objects = find_by_name(name)
         if check_objects == nil
-          @enrollments[name] = Enrollment.new(data)
+          @enrollments[name.upcase] = Enrollment.new(data)
         else
             add_grade(check_objects, grade, year, percent)
         end
@@ -40,7 +40,7 @@ class EnrollmentRepository
   end
 
   def find_by_name(name)
-      @enrollments[name]
+      @enrollments[name.upcase]
   end
 
 end

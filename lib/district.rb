@@ -13,7 +13,7 @@ class District
   end
 
   def enrollment
-    district_repo.find_enrollment(attributes[:name])
+    district_repo.enrollment_connector(attributes[:name].upcase)
   end
 
 end
