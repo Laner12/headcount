@@ -45,4 +45,5 @@ class EnrollmentTest < Minitest::Test
 
     assert_equal "ACADEMY 20", e.name
   end
+
 end
