@@ -15,5 +15,4 @@ class District
   def enrollment
     district_repo.enrollment_connector(attributes[:name].upcase)
   end
-
 end

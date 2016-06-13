@@ -1,7 +1,7 @@
 {
   "Unit Tests": {
     "coverage": {
-      "/Users/raphabarbo/turing/1module/projects/headcount/test/district_test.rb": [
+      "/Users/LaneWinham/turing/module1/projects/headcount/test/district_test.rb": [
         1,
         1,
         null,
@@ -14,11 +14,10 @@
         1,
         1,
         1,
-        null,
         null,
         null
       ],
-      "/Users/raphabarbo/turing/1module/projects/headcount/test/enrollment_repository_test.rb": [
+      "/Users/LaneWinham/turing/module1/projects/headcount/test/enrollment_repository_test.rb": [
         1,
         1,
         null,
@@ -76,13 +75,11 @@
         null,
         1,
         null,
-        null,
         1,
-        null,
         null,
         null
       ],
-      "/Users/raphabarbo/turing/1module/projects/headcount/test/enrollment_test.rb": [
+      "/Users/LaneWinham/turing/module1/projects/headcount/test/enrollment_test.rb": [
         1,
         1,
         null,
@@ -129,11 +126,10 @@
         1,
         null,
         1,
-        null,
         null,
         null
       ],
-      "/Users/raphabarbo/turing/1module/projects/headcount/test/headcount_analyst_test.rb": [
+      "/Users/LaneWinham/turing/module1/projects/headcount/test/headcount_analyst_test.rb": [
         1,
         1,
         1,
@@ -248,7 +244,7 @@
         null,
         null
       ],
-      "/Users/raphabarbo/turing/1module/projects/headcount/lib/headcount_analyst.rb": [
+      "/Users/LaneWinham/turing/module1/projects/headcount/lib/headcount_analyst.rb": [
         1,
         1,
         null,
@@ -261,23 +257,11 @@
         null,
         null,
         1,
-        192,
+        750,
         null,
         null,
         1,
-        192,
-        null,
-        null,
-        1,
-        190,
-        null,
-        null,
-        1,
-        186,
-        null,
-        null,
-        1,
-        186,
+        378,
         null,
         null,
         1,
@@ -285,13 +269,35 @@
         null,
         null,
         1,
-        2,
-        4,
-        4,
-        4,
-        4,
+        372,
         null,
-        2,
+        null,
+        1,
+        372,
+        null,
+        null,
+        1,
+        748,
+        null,
+        null,
+        1,
+        188,
+        376,
+        376,
+        376,
+        376,
+        null,
+        188,
+        null,
+        null,
+        1,
+        186,
+        372,
+        372,
+        372,
+        372,
+        null,
+        186,
         null,
         null,
         1,
@@ -340,6 +346,10 @@
         null,
         1,
         185,
+        93,
+        null,
+        92,
+        null,
         null,
         null,
         1,
@@ -360,11 +370,14 @@
         186,
         2,
         2,
+        0,
+        null,
+        2,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1465853839
+    "timestamp": 1465855435
   }
 }

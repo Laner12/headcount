@@ -11,5 +11,4 @@ class DistrictTest < Minitest::Test
     assert_equal "ACADEMY 30", d2.name
     refute_equal "ACADEMY 30", d1.name
   end
-
 end

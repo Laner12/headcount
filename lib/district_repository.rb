@@ -47,5 +47,4 @@ class DistrictRepository
   def collect_district_names
    enrollment_repo.enrollments.keys
   end
-
 end
