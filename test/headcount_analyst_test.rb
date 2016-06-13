@@ -55,7 +55,6 @@ class HeadcountAnalystTest < Minitest::Test
     ha = HeadcountAnalyst.new(dr)
 
     assert_equal 0.452,ha.kindergarten_participation_against_high_school_graduation('ACADEMY 20')
-    #1.234
   end
 
   def test_kindergarten_participation_correlates_with_high_school_graduation
@@ -68,7 +67,7 @@ class HeadcountAnalystTest < Minitest::Test
     })
     ha = HeadcountAnalyst.new(dr)
 
-    assert_equal false, ha.kindergarten_participation_correlates_with_high_school_graduation(for: 'ACADEMY 20')
+    refute ha.kindergarten_participation_correlates_with_high_school_graduation(for: 'ACADEMY 20')
   end
 
   def test_kindergarten_participation_correlates_with_high_school_graduation_statewide
@@ -85,7 +84,6 @@ class HeadcountAnalystTest < Minitest::Test
   end
 
   def test_can_get_all_district_names
-    skip
     dr = DistrictRepository.new
     dr.load_data({
       :enrollment => {
@@ -95,12 +93,11 @@ class HeadcountAnalystTest < Minitest::Test
       })
       ha = HeadcountAnalyst.new(dr)
 
-      assert_equal ["COLORADO", "ACADEMY 20", "ADAMS COUNTY 14"], dr.get_all_district_names[0..2]
-      assert_equal 181, dr.get_all_district_names.count
+      assert_equal ["COLORADO", "ACADEMY 20", "ADAMS COUNTY 14"], dr.collect_district_names[0..2]
+      assert_equal 181, dr.collect_district_names.count
   end
 
   def test_can_get_subset_district_names
-    skip
     dr = DistrictRepository.new
     dr.load_data({
       :enrollment => {
