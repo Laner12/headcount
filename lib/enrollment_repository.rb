@@ -25,7 +25,7 @@ class EnrollmentRepository
         if check_objects == nil
           @enrollments[name.upcase] = Enrollment.new(data)
         else
-            add_grade(check_objects, grade, year, percent)
+          add_grade(check_objects, grade, year, percent)
         end
       end
     end
