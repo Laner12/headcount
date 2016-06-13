@@ -2,22 +2,31 @@ require_relative "district_repository"
 require_relative "truncate"
 
 class HeadcountAnalyst
-  attr_reader :dr
-
+  attr_reader :dr,
+              :results
   def initialize(district_repository)
     @dr = district_repository
+    @results = []
   end
 
   def find(name)
     dr.find_by_name(name)
   end
 
-  def kinder_data_length(dist_name)
-    dist_name.enrollment.data[:kindergarten_participation].length
+  def kinder_years(dist_name)
+    dist_name.enrollment.data[:kindergarten_participation]
   end
 
-  def kinder_data_participation(dist_name)
+  def kinder_participation(dist_name)
     dist_name.enrollment.data[:kindergarten_participation].values.reduce(:+)
+  end
+
+  def high_years(dist_name)
+    dist_name.enrollment.data[:high_school_graduation]
+  end
+
+  def high_participation(dist_name)
+    dist_name.enrollment.data[:high_school_graduation].values.reduce(:+)
   end
 
   def average(participation, years)
@@ -27,54 +36,103 @@ class HeadcountAnalyst
   def kindergarten_participation_rate_variation(first_dist, second_dist)
     averages = [first_dist, second_dist[:against]].map do |dist|
       dist_name = find(dist)
-      dist_years = kinder_data_length(dist_name)
-      dist_participation = kinder_data_participation(dist_name)
+      dist_years = kinder_years(dist_name).length
+      dist_participation = kinder_participation(dist_name)
       average(dist_participation, dist_years)
     end
     Truncate.truncate_float(averages[0] / averages[1])
   end
 
-  def kindergarten_participation_rate_variation_trend(first_district, second_district)
-    district_one = dr.find_by_name(first_district)
-    district_one_years = district_one.enrollment.data[:kindergarten_participation]
-
-    district_two = dr.find_by_name(second_district[:against])
-    district_two_years = district_two.enrollment.data[:kindergarten_participation]
-
-    district_one_years.merge!(district_two_years) do |key , onekey, twokey|
-    Truncate.truncate_float(onekey / twokey)
+  def kindergarten_participation_rate_variation_trend(first_dist, second_dist)
+    year_collection = [first_dist, second_dist[:against]].map do |dist|
+      dist_name = find(dist)
+      kinder_years(dist_name)
+    end
+    year_collection[0].merge!(year_collection[1]) do |key , key_one, key_two|
+    Truncate.truncate_float(key_one / key_two)
     end
   end
 
   def kindergarten_participation_against_high_school_graduation(district)
-    district_one = dr.find_by_name(district)
-    district_one_years = district_one.enrollment.data[:kindergarten_participation].length
-    district_one_total_participation = district_one.enrollment.data[:kindergarten_participation].values.reduce(:+)
-    district_one_average = district_one_total_participation/district_one_years
+    name = find(district)
+    kinder = average(kinder_participation(name), kinder_years(name).length)
+    high = average(high_participation(name), high_years(name).length)
 
-    district_two = dr.find_by_name(district)
-    district_two_years = district_two.enrollment.data[:high_school_graduation].length
-    district_two_total_participation = district_two.enrollment.data[:high_school_graduation].values.reduce(:+)
-    district_two_average = district_two_total_participation/district_two_years
-    Truncate.truncate_float(district_one_average/ district_two_average)
+      Truncate.truncate_float(kinder / high)
+
+      # name = find(district)
+      # k_p = kinder_participation(name)
+      # k_y = kinder_years(name).length
+      # kinder = average(k_p, k_y)
+      # h_p = high_participation(name)
+      # h_y = high_years(name).length
+      # high = average(h_p, h_y)
+      #   Truncate.truncate_float(kinder / high)
   end
 
-  def kindergarten_participation_correlates_with_high_school_graduation(name)
-    # grab the enrollment data for the named school (kinder) (high)
-    # then find the percentage overall for both data sets
+  def kindergarten_participation_correlates_with_high_school_graduation(district)
+    # name = find(district[:for])
+    name = district
     binding.pry
-    object = dr.find_by_name(name[:for])
-    k_years = object.enrollment.data[:kindergarten_participation].length
-    k_percent = object.enrollment.data[:kindergarten_participation].values.reduce(:+)
-    k_data = (k_percent / k_years)
-    binding.pry
-    h_years = object.enrollment.data[:high_school_graduation].length
-    h_percent = object.enrollment.data[:high_school_graduation].values.reduce(:+)
-    h_data = (h_percent / h_years)
-    binding.pry
-    final = (k_data / h_data)
-    final_2 = (h_data / k_data)
-    binding.pry
+    value = kindergarten_participation_against_high_school_graduation(name)
+    if value >= 0.6 && value <= 1.5
+      true
+    else
+      false
+    end
   end
 
+  # def kindergarten_participation_correlates_with_high_school_graduation(district)
+  #   binding.pry
+  #   if district.keys.first == :for
+  #       district[:for]
+  #   elsif district.keys.first == :across
+  #     district = district[:across]
+  #   else
+  #     district = district
+  #   end
+  #   if district.is_a?(Array)
+  #     return statewide_comparison(district)
+  #     elsif district != "STATEWIDE"
+  #       return correlation(district)
+  #     elsif district == "STATEWIDE"
+  #       return statewide_comparison
+  #     else
+  #       correlation(district)
+  #   end
+  # end
+  #
+  # def correlation(district)
+  #   correlation = kindergarten_participation_against_high_school_graduation(district)
+  #   correlated?(correlation)
+  # end
+  #
+  # def correlated?(correlation)
+  #   # true if correlation >= 0.6 && correlation <= 1.5
+  #   if correlation >= 0.6 && correlation <= 1.5
+  #      correlation = true
+  #    else
+  #      correlation = false
+  #   end
+  # end
+  #
+  # def statewide_comparison(districts = nil)
+  #   district_names = dr.collect_district_names
+  #   if districts.nil?
+  #     names = district_names
+  #   else
+  #     names = districts
+  #   end
+  #   names.map do |district_name|
+  #     if district_name != "COLORADO"
+  #       #results needs to be an array
+  #       @results << kindergarten_participation_correlates_with_high_school_graduation(district_name)
+  #     end
+  #   end
+  #   total = results.count
+  #   counter = 0
+  #   results.each { |result| counter += 1 if result == true }
+  #   percentage = truncate_float(counter/ total.to_f)
+  #   percentage >= 0.7 ? true : false
+  # end
 end

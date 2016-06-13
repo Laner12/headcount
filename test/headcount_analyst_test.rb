@@ -44,7 +44,7 @@ class HeadcountAnalystTest < Minitest::Test
     assert_equal result, ha.kindergarten_participation_rate_variation_trend('ACADEMY 20', :against => 'COLORADO')
   end
 
-  def test_something_something
+  def test_participation_of_kindergarten_against_high_school
     dr = DistrictRepository.new
     dr.load_data({
       :enrollment => {
@@ -59,7 +59,6 @@ class HeadcountAnalystTest < Minitest::Test
   end
 
   def test_kindergarten_participation_correlates_with_high_school_graduation
-    skip
     dr = DistrictRepository.new
     dr.load_data({
       :enrollment => {
@@ -69,6 +68,49 @@ class HeadcountAnalystTest < Minitest::Test
     })
     ha = HeadcountAnalyst.new(dr)
 
-    assert_equal true, ha.kindergarten_participation_correlates_with_high_school_graduation(for: 'ACADEMY 20')
+    assert_equal false, ha.kindergarten_participation_correlates_with_high_school_graduation(for: 'ACADEMY 20')
+  end
+
+  def test_kindergarten_participation_correlates_with_high_school_graduation_statewide
+    dr = DistrictRepository.new
+    dr.load_data({
+      :enrollment => {
+        :kindergarten => "./data/Kindergartners in full-day program.csv",
+        :high_school_graduation => "./data/High school graduation rates.csv"
+      }
+      })
+      ha = HeadcountAnalyst.new(dr)
+
+    refute ha.kindergarten_participation_correlates_with_high_school_graduation(:for => 'STATEWIDE')
+  end
+
+  def test_can_get_all_district_names
+    skip
+    dr = DistrictRepository.new
+    dr.load_data({
+      :enrollment => {
+        :kindergarten => "./data/Kindergartners in full-day program.csv",
+        :high_school_graduation => "./data/High school graduation rates.csv"
+      }
+      })
+      ha = HeadcountAnalyst.new(dr)
+
+      assert_equal ["COLORADO", "ACADEMY 20", "ADAMS COUNTY 14"], dr.get_all_district_names[0..2]
+      assert_equal 181, dr.get_all_district_names.count
+  end
+
+  def test_can_get_subset_district_names
+    skip
+    dr = DistrictRepository.new
+    dr.load_data({
+      :enrollment => {
+        :kindergarten => "./data/Kindergartners in full-day program.csv",
+        :high_school_graduation => "./data/High school graduation rates.csv"
+      }
+      })
+      ha = HeadcountAnalyst.new(dr)
+
+      refute  ha.kindergarten_participation_correlates_with_high_school_graduation(
+      :across => ['ACADEMY 20', 'PUEBLO CITY 60', 'AGATE 300', 'ADAMS COUNTY 14'])
   end
 end
