@@ -59,22 +59,18 @@ class HeadcountAnalyst
     Truncate.truncate_float(district_one_average/ district_two_average)
   end
 
-  def kindergarten_participation_correlates_with_high_school_graduation(name)
-    # grab the enrollment data for the named school (kinder) (high)
-    # then find the percentage overall for both data sets
-    binding.pry
-    object = dr.find_by_name(name[:for])
-    k_years = object.enrollment.data[:kindergarten_participation].length
-    k_percent = object.enrollment.data[:kindergarten_participation].values.reduce(:+)
-    k_data = (k_percent / k_years)
-    binding.pry
-    h_years = object.enrollment.data[:high_school_graduation].length
-    h_percent = object.enrollment.data[:high_school_graduation].values.reduce(:+)
-    h_data = (h_percent / h_years)
-    binding.pry
-    final = (k_data / h_data)
-    final_2 = (h_data / k_data)
-    binding.pry
-  end
+  # def kindergarten_participation_correlates_with_high_school_graduation(name)
+  #   # grab the enrollment data for the named school (kinder) (high)
+  #   # then find the percentage overall for both data sets
+  #   object = dr.find_by_name(name[:for])
+  #   k_years = object.enrollment.data[:kindergarten_participation].length
+  #   k_percent = object.enrollment.data[:kindergarten_participation].values.reduce(:+)
+  #   k_data = (k_percent / k_years)
+  #   h_years = object.enrollment.data[:high_school_graduation].length
+  #   h_percent = object.enrollment.data[:high_school_graduation].values.reduce(:+)
+  #   h_data = (h_percent / h_years)
+  #   final = (k_data / h_data)
+  #   final_2 = (h_data / k_data)
+  # end
 
 end
