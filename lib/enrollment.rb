@@ -41,7 +41,6 @@ class Enrollment
   def graduation_rate_in_year(year)
     if data[:high_school_graduation][year] != nil
       Truncate.truncate_float(data[:high_school_graduation][year])
-
     end
   end
 

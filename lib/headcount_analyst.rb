@@ -2,7 +2,6 @@ require_relative "district_repository"
 require_relative "truncate"
 
 class HeadcountAnalyst
-
   attr_reader :dr
 
   def initialize(district_repository)
@@ -43,6 +42,16 @@ class HeadcountAnalyst
     Truncate.truncate_float(averages[0] / averages[1])
   end
 
+  def high_school_graduation_rate_variation(first_dist, second_dist)
+    averages = [first_dist, second_dist[:against]].map do |dist|
+      dist_name = find(dist)
+      dist_years = high_years(dist_name).length
+      dist_participation = high_participation(dist_name)
+      average(dist_participation, dist_years)
+    end
+    Truncate.truncate_float(averages[0] / averages[1])
+  end
+
   def kindergarten_participation_rate_variation_trend(first_dist, second_dist)
     year_collection = [first_dist, second_dist[:against]].map do |dist|
       dist_name = find(dist)
@@ -54,61 +63,66 @@ class HeadcountAnalyst
   end
 
   def kindergarten_participation_against_high_school_graduation(district)
-    name = find(district)
-    kinder = average(kinder_participation(name), kinder_years(name).length)
-    high = average(high_participation(name), high_years(name).length)
-    Truncate.truncate_nan(kinder / high)
+    kind = kindergarten_participation_rate_variation(district, :against => 'COLORADO')
+    high = high_school_graduation_rate_variation(district, :against => 'COLORADO')
+    final = (kind / high)
+    Truncate.truncate_nan(final)
   end
 
   def kindergarten_participation_correlates_with_high_school_graduation(district)
-      if district.is_a?(String)
-        district = district
-      elsif district.keys.first == :for
-        district = district[:for]
-      elsif district.keys.first == :across
-        district = district[:across]
-      else
-        district = district
-      end
-
-      if district.is_a?(Array)
-        return comparing_states(district)
-      elsif district != "STATEWIDE"
-        return correlating(district)
-      elsif district == "STATEWIDE"
-        return comparing_states
-      else
-        correlating(district)
-      end
+    if district.is_a?(String)
+      district = district
+    elsif district.keys.first == :for
+      district = district[:for]
+    elsif district.keys.first == :across
+      district = district[:across]
+    else
     end
 
-    def correlating(district)
-      correlating = kindergarten_participation_against_high_school_graduation(district)
-      does_it_correlate?(correlating)
+    if district.is_a?(Array)
+      return comparing_states(district)
+    elsif district != "STATEWIDE"
+      return correlating(district)
+    elsif district == "STATEWIDE"
+      return comparing_states
+    else
     end
+  end
 
-    def does_it_correlate?(correlating)
-      correlating > 0.6 && correlating < 1.5 ? true : false
+  def correlating(district)
+    correlating = kindergarten_participation_against_high_school_graduation(district)
+    does_it_correlate?(correlating)
+  end
+
+  def does_it_correlate?(percent)
+    if percent >= 0.6 && percent <= 1.5
+      true
+    else
+      false
     end
+  end
 
-    def comparing_states(parsed_districts = nil)
-      district_names = dr.collect_district_names
-      names_array = []
-      if parsed_districts == nil
-        names = district_names
-      else
-        names = parsed_districts
+  def comparing_states(parsed_districts = nil)
+    district_names = dr.collect_district_names
+    names_array = []
+    if parsed_districts == nil
+      names = district_names
+    else
+      names = parsed_districts
+    end
+    names.map do |district_name|
+      if district_name != "COLORADO"
+        names_array << kindergarten_participation_correlates_with_high_school_graduation(district_name)
       end
-      names.map do |district_name|
-        if district_name != "COLORADO"
-          names_array << kindergarten_participation_correlates_with_high_school_graduation(district_name)
-        end
-      end
-      total = names_array.count
-      matched_district_parameter_counter = 0
-      names_array.each { |result| matched_district_parameter_counter += 1 if result == true }
-      percentage = Truncate.truncate_nan(matched_district_parameter_counter/ total.to_f)
-      percentage >= 0.7 ? true : false
     end
-
+    total = names_array.count
+    matched_district_parameter_counter = 0
+    names_array.each { |result| matched_district_parameter_counter += 1 if result == true }
+    percentage = Truncate.truncate_nan(matched_district_parameter_counter/ total.to_f)
+    if percentage >= 0.70
+      true
+    else
+      false
+    end
+  end
 end

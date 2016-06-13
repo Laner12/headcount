@@ -55,8 +55,6 @@ class EnrollmentRepositoryTest < Minitest::Test
     })
     enrollment = er.find_by_name("ACADEMY 20")
 
-
     assert_equal 0.895, enrollment.graduation_rate_in_year(2010)
   end
-
 end
