@@ -3,6 +3,20 @@ require_relative "test_helper"
 
 class EconomicProfileTest < Minitest::Test
 # all of these need to hit an unknown data error
+
+  # def test_it_can_return_median_household_data
+  #   data = {:median_household_income => {[2005, 2009] => 50000, [2008, 2014] => 60000},
+  #       :children_in_poverty => {2012 => 0.1845},
+  #       :free_or_reduced_price_lunch => {2014 => {:percentage => 0.023, :total => 100}},
+  #       :title_i => {2015 => 0.543},
+  #       :name => "ACADEMY 20"
+  #      }
+  #   economic_profile = EconomicProfile.new(data)
+  #   action = economic_profile.median_household_income
+  #
+  #   assert_equal({[2005, 2009] => 50000, [2008, 2014] => 60000}, action)
+  # end
+
   def test_it_returns_median_household_data_by_year
     skip
     data = {:median_household_income => {[2005, 2009] => 50000, [2008, 2014] => 60000},

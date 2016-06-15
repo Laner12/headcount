@@ -36,7 +36,7 @@ class EnrollmentRepository
       check_objects.kindergarten_participation.merge!({year => percent})
     else
       check_objects.high_school_graduation.merge!({year => percent})
-    end
+    end# does this need to return nil?
   end
 
   def find_by_name(name)
