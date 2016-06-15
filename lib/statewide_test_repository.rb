@@ -7,6 +7,7 @@ class StatewideTestRepository
 
   def initialize(statewide_tests = {})
     @statewide_tests = statewide_tests
+
   end
 
   def proficiency_parser(stored_data, name, race, year, title, percentage)

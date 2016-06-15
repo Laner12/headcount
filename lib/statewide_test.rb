@@ -1,4 +1,5 @@
-require_relative 'errors'
+require_relative "errors"
+require_relative "statewide_test_repository"
 
 class StatewideTest
 
@@ -14,10 +15,6 @@ attr_reader :attributes, :grades, :races, :subjects
   def name
     attributes[:name].upcase
   end
-
-  # def raise_unknown_data_error
-  #   raise UnknownDataError
-  # end
 
   def proficient_by_grade(grade)
     if grades.include?(grade)
