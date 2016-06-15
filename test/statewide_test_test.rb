@@ -49,5 +49,4 @@ class StatewideTestTest < Minitest::Test
       statewide_class.proficient_for_subject_by_race_in_year(:math, :martian, 2008)
     end
   end
-
 end
