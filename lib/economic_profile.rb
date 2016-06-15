@@ -29,13 +29,13 @@ class EconomicProfile
 
   def median_household_income_in_year(year)
     # could do a method call that checks the year first
-    total = []
+    collection = []
     data[:median_household_income].each_key do |key|
       if year.between?(key[0], key[1])
-        total << data[:median_household_income][key]
+        collection << data[:median_household_income][key]
       end
     end
-    total.reduce(:+) / total.count
+    collection.reduce(:+) / collection.count
   end
 
   def median_household_income_average

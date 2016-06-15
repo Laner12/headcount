@@ -45,7 +45,9 @@ class EconomicProfileRepository
   def parse_row(title, row)
     name = row[:location].upcase
     year = row[:timeframe].to_i
-    year = row[:timeframe].split("-").map { |num| num.to_i } if title == :median_household_income
+     if title == :median_household_income
+       year = row[:timeframe].split("-").map { |num| num.to_i }
+     end
     # year = [] << row[:timeframe] if title == :median_household_income
     value = row[:data].to_f
     [name, year, value]
@@ -74,7 +76,7 @@ class EconomicProfileRepository
   #     # it is returning the object
   #     # return the object
   #     # then calling an unkown method
-  #     # run method on that object that will update state (@data) of that object
+  #     # run method on that object that will update state (@data) of object
   #     # within the merge it is never adding data/ only the original stays
   #     check_objects.median_household_income(data)  #.merge!({year => data})
   #   elsif title == :children_in_poverty

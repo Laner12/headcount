@@ -62,20 +62,20 @@ class HeadcountAnalyst
     end
   end
 
-  def kindergarten_participation_against_high_school_graduation(district)
-    kind = kindergarten_participation_rate_variation(district, :against => 'COLORADO')
-    high = high_school_graduation_rate_variation(district, :against => 'COLORADO')
-    final = (kind / high)
+  def kindergarten_participation_against_high_school_graduation(dist)
+    kp = kindergarten_participation_rate_variation(dist, :against => 'COLORADO')
+    hg = high_school_graduation_rate_variation(dist, :against => 'COLORADO')
+    final = (kp / hg)
     Truncate.truncate_nan(final)
   end
 
-  def kindergarten_participation_correlates_with_high_school_graduation(district)
-    if district.is_a?(String)
-      district = district
-    elsif district.keys.first == :for
-      district = district[:for]
-    elsif district.keys.first == :across
-      district = district[:across]
+  def kindergarten_participation_correlates_with_high_school_graduation(dist)
+    if dist.is_a?(String)
+      district = dist
+    elsif dist.keys.first == :for
+      district = dist[:for]
+    elsif dist.keys.first == :across
+      district = dist[:across]
     else
     end
 
@@ -89,9 +89,9 @@ class HeadcountAnalyst
     end
   end
 
-  def correlating(district)
-    correlating = kindergarten_participation_against_high_school_graduation(district)
-    does_it_correlate?(correlating)
+  def correlating(dist)
+    correlate = kindergarten_participation_against_high_school_graduation(dist)
+    does_it_correlate?(correlate)
   end
 
   def does_it_correlate?(percent)
@@ -117,9 +117,12 @@ class HeadcountAnalyst
     end
     total = names_array.count
     matched_district_parameter_counter = 0
-    names_array.each { |result| matched_district_parameter_counter += 1 if result == true }
-    percentage = Truncate.truncate_nan(matched_district_parameter_counter/ total.to_f)
-    if percentage >= 0.70
+    names_array.each do |result|
+       matched_district_parameter_counter += 1 if result == true
+     end
+    final = (matched_district_parameter_counter/ total.to_f)
+    percent = Truncate.truncate_nan(final)
+    if percent >= 0.70
       true
     else
       false
