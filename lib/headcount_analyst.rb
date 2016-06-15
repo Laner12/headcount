@@ -110,9 +110,10 @@ class HeadcountAnalyst
     else
       names = parsed_districts
     end
-    names.map do |district_name|
-      if district_name != "COLORADO"
-        names_array << kindergarten_participation_correlates_with_high_school_graduation(district_name)
+    names.map do |dist|
+      if dist != "COLORADO"
+        names_array << \
+        kindergarten_participation_correlates_with_high_school_graduation(dist)
       end
     end
     total = names_array.count

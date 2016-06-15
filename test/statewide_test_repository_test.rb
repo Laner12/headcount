@@ -1,8 +1,9 @@
+
 require './test/test_helper'
 require './lib/statewide_test_repository'
 require './lib/statewide_test'
 
-class StateWideTestRepositoryTest < Minitest::Test
+class StatewideTestRepositoryTest < Minitest::Test
 
 
  def test_loads_data
@@ -19,10 +20,8 @@ class StateWideTestRepositoryTest < Minitest::Test
       assert_equal 181, statewiderepo_class.statewide_tests.count
       result1 = {2011=>{:math=>0.8169, :reading=>0.8976, :writing=>0.8268}, 2012=>{:math=>0.8182, :reading=>0.89328, :writing=>0.8083}, 2013=>{:math=>0.8053, :reading=>0.90193, :writing=>0.8109}, 2014=>{:math=>0.8, :reading=>0.85531, :writing=>0.7894}}
       result2 = {2008=>{:math=>0.857, :reading=>0.866, :writing=>0.671}, 2009=>{:math=>0.824, :reading=>0.862, :writing=>0.706}, 2010=>{:math=>0.849, :reading=>0.864, :writing=>0.662}, 2011=>{:math=>0.819, :reading=>0.867, :writing=>0.678}, 2012=>{:reading=>0.87, :math=>0.83, :writing=>0.65517}, 2013=>{:math=>0.8554, :reading=>0.85923, :writing=>0.6687}, 2014=>{:math=>0.8345, :reading=>0.83101, :writing=>0.63942}}
-      assert_equal result1, statewiderepo_class.statewide_tests["ACADEMY 20"].data_statewide[:asian]
-      assert_equal result2, statewiderepo_class.statewide_tests["ACADEMY 20"].data_statewide[3]
-      assert_equal nil, statewiderepo_class.find_by_name("TEST")
-
+      assert_equal result1, statewiderepo_class.statewide_tests["ACADEMY 20"].attributes[:asian]
+      assert_equal result2, statewiderepo_class.statewide_tests["ACADEMY 20"].attributes[3]
  end
 
 end
