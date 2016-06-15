@@ -8,7 +8,8 @@ attr_reader :attributes, :grades, :races, :subjects
   def initialize(attributes)
     @attributes = attributes
     @grades = [3, 8]
-    @races = [:asian, :black, :pacific_islander, :hispanic, :native_american, :two_or_more, :white]
+    @races = [:asian, :black, :pacific_islander, :hispanic,
+              :native_american, :two_or_more, :white]
     @subjects = [:math, :reading, :writing]
   end
 

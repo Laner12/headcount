@@ -7,7 +7,6 @@ class StatewideTestRepository
 
   def initialize(statewide_tests = {})
     @statewide_tests = statewide_tests
-
   end
 
   def proficiency_parser(stored_data, name, race, year, title, percentage)
@@ -27,8 +26,11 @@ class StatewideTestRepository
   end
 
   def determinate_percentage(data)
-    data = "N/A" if data == "N/A"
-    else data.to_f
+    if data == "N/A"
+    "N/A"
+    else
+     data.to_f
+    end
   end
 
   def load_data(data)
@@ -39,31 +41,33 @@ class StatewideTestRepository
       subjects = [:math, :reading, :writing]
       file = file_path
 
-      CSV.foreach(file, headers: true, header_converters: :symbol) do |row|
 
+      CSV.foreach(file, headers: true, header_converters: :symbol) do |row|
         name = row[:location].upcase
         subject = row[:score].downcase.to_sym if row.include?(:score)
         year = row[:timeframe].to_i
-        percentage = determinate_percentage(row[:data])
+        percent = determinate_percentage(row[:data])
 
-        if row.include?(:race_ethnicity) &&
+        if row.include?(:race_ethnicity)
           if row[:race_ethnicity] == "Hawaiian/Pacific Islander"
             race = :pacific_islander
           else
             race = row[:race_ethnicity].tr(" ", "_").downcase.to_sym
           end
         end
+
         if subjects.include?(title)
-          proficiency_parser(stored_data, name, race, year, title, percentage)
+          proficiency_parser(stored_data, name, race, year, title, percent)
         else
-          proficiency_parser(stored_data, name, title, year, subject, percentage)
+          proficiency_parser(stored_data, name, title, year, subject, percent)
         end
+
       end
     end
-    statewide_test(stored_data)
+    create_statewide_tests(stored_data)
   end
 
-  def statewide_test(data)
+  def create_statewide_tests(data)
     data.each do |name, district_data|
       statewide_tests.merge!(name => StatewideTest.new(district_data))
     end

@@ -5,11 +5,13 @@ require "csv"
 
 class DistrictRepository
   attr_reader :enrollment_repo,
+              :statewide_repo,
               :districts
 
   def initialize(districts = {})
     @districts  = districts
     @enrollment_repo = EnrollmentRepository.new
+    @statewide_repo = StatewideTestRepository.new
   end
 
 
@@ -43,6 +45,10 @@ class DistrictRepository
 
   def enrollment_connector(name)
    enrollment_repo.enrollments[name.upcase]
+  end
+
+  def state_connector(name)
+    statewide_repo.statewide_tests[name.upcase]
   end
 
   def collect_district_names

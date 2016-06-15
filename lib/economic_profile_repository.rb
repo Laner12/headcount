@@ -72,7 +72,6 @@ class EconomicProfileRepository
 
   def add_data(check_objects, title, data)
   #   if title == :median_household_income
-  #     # binding.pry
   #     # it is returning the object
   #     # return the object
   #     # then calling an unkown method
