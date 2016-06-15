@@ -4,21 +4,19 @@ require_relative "test_helper"
 class EconomicProfileTest < Minitest::Test
 # all of these need to hit an unknown data error
 
-  # def test_it_can_return_median_household_data
-  #   data = {:median_household_income => {[2005, 2009] => 50000, [2008, 2014] => 60000},
-  #       :children_in_poverty => {2012 => 0.1845},
-  #       :free_or_reduced_price_lunch => {2014 => {:percentage => 0.023, :total => 100}},
-  #       :title_i => {2015 => 0.543},
-  #       :name => "ACADEMY 20"
-  #      }
-  #   economic_profile = EconomicProfile.new(data)
-  #   action = economic_profile.median_household_income
-  #
-  #   assert_equal({[2005, 2009] => 50000, [2008, 2014] => 60000}, action)
-  # end
+  def test_it_has_a_name
+    data = {:median_household_income => {[2005, 2009] => 50000, [2008, 2014] => 60000},
+        :children_in_poverty => {2012 => 0.1845},
+        :free_or_reduced_price_lunch => {2014 => {:percentage => 0.023, :total => 100}},
+        :title_i => {2015 => 0.543},
+        :name => "ACADEMY 20"
+       }
+    economic_profile = EconomicProfile.new(data)
+
+    assert_equal "ACADEMY 20", economic_profile.name
+  end
 
   def test_it_returns_median_household_data_by_year
-    skip
     data = {:median_household_income => {[2005, 2009] => 50000, [2008, 2014] => 60000},
         :children_in_poverty => {2012 => 0.1845},
         :free_or_reduced_price_lunch => {2014 => {:percentage => 0.023, :total => 100}},
@@ -32,7 +30,6 @@ class EconomicProfileTest < Minitest::Test
   end
 
   def test_it_returns_median_household_data
-    skip
     data = {:median_household_income => {[2005, 2009] => 50000, [2008, 2014] => 60000},
         :children_in_poverty => {2012 => 0.1845},
         :free_or_reduced_price_lunch => {2014 => {:percentage => 0.023, :total => 100}},
@@ -45,7 +42,6 @@ class EconomicProfileTest < Minitest::Test
   end
 
   def test_it_return_children_in_porverty_in_year
-    skip
     data = {:median_household_income => {[2005, 2009] => 50000, [2008, 2014] => 60000},
         :children_in_poverty => {2012 => 0.1845},
         :free_or_reduced_price_lunch => {2014 => {:percentage => 0.023, :total => 100}},
@@ -58,7 +54,6 @@ class EconomicProfileTest < Minitest::Test
   end
 
   def test_it_returns_free_or_reduced_lunch_in_year_percentage
-    skip
     data = {:median_household_income => {[2005, 2009] => 50000, [2008, 2014] => 60000},
         :children_in_poverty => {2012 => 0.1845},
         :free_or_reduced_price_lunch => {2014 => {:percentage => 0.023, :total => 100}},
@@ -71,7 +66,6 @@ class EconomicProfileTest < Minitest::Test
   end
 
   def test_it_returns_free_or_reduced_lunch_number_in_year_
-    skip
     data = {:median_household_income => {[2005, 2009] => 50000, [2008, 2014] => 60000},
         :children_in_poverty => {2012 => 0.1845},
         :free_or_reduced_price_lunch => {2014 => {:percentage => 0.023, :total => 100}},
@@ -84,7 +78,6 @@ class EconomicProfileTest < Minitest::Test
   end
 
   def test_it_returns_title_one
-    skip
     data = {:median_household_income => {[2005, 2009] => 50000, [2008, 2014] => 60000},
         :children_in_poverty => {2012 => 0.1845},
         :free_or_reduced_price_lunch => {2014 => {:percentage => 0.023, :total => 100}},

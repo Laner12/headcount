@@ -25,7 +25,6 @@ class EconomicProfileRepository
         check_objects = find_by_name(name)
         if check_objects == nil
           @economic_profile[name.upcase] = EconomicProfile.new(data)
-          binding.pry
         else
           add_data(check_objects, title, data)
         end
@@ -46,7 +45,8 @@ class EconomicProfileRepository
   def parse_row(title, row)
     name = row[:location].upcase
     year = row[:timeframe].to_i
-    year = [] << row[:timeframe] if title == :median_household_income
+    year = row[:timeframe].split("-").map { |num| num.to_i } if title == :median_household_income
+    # year = [] << row[:timeframe] if title == :median_household_income
     value = row[:data].to_f
     [name, year, value]
   end
@@ -69,22 +69,22 @@ class EconomicProfileRepository
   # end
 
   def add_data(check_objects, title, data)
-    if title == :median_household_income
-      # binding.pry
-      # it is returning the object
-      # return the object
-      # then calling an unkown method
-      # run method on that object that will update state (@data) of that object
-      # within the merge it is never adding data/ only the original stays
-      check_objects.median_household_income(data)  #.merge!({year => data})
-    elsif title == :children_in_poverty
-     check_objects.children_in_poverty(data)
-    elsif title == :free_or_reduced_price_lunch
-      check_objects.free_or_reduced_price_lunch(data)
-    elsif title == :title_i
-      check_objects.title_i(data)
-    else
-    end
+  #   if title == :median_household_income
+  #     # binding.pry
+  #     # it is returning the object
+  #     # return the object
+  #     # then calling an unkown method
+  #     # run method on that object that will update state (@data) of that object
+  #     # within the merge it is never adding data/ only the original stays
+  #     check_objects.median_household_income(data)  #.merge!({year => data})
+  #   elsif title == :children_in_poverty
+  #    check_objects.children_in_poverty(data)
+  #   elsif title == :free_or_reduced_price_lunch
+  #     check_objects.free_or_reduced_price_lunch(data)
+  #   elsif title == :title_i
+  #     check_objects.title_i(data)
+  #   else
+  #   end
   end
 
   def find_by_name(name)

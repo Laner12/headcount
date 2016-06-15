@@ -11,7 +11,7 @@ class EconomicProfileRepositoryTest < Minitest::Test
           data:"56222"}
     epr = EconomicProfileRepository.new
 
-    assert_equal(["COLORADO", ["2005-2009"], 56222.0], epr.parse_row(title, row))
+    assert_equal(["COLORADO", [2005, 2009], 56222.0], epr.parse_row(title, row))
   end
 
   def test_it_can_extract_values_parsing_the_row_and_returns_types_of_years
@@ -46,7 +46,7 @@ class EconomicProfileRepositoryTest < Minitest::Test
           data:"56222"}
     epr = EconomicProfileRepository.new
 
-    assert_equal({:name=>"COLORADO", :median_household_income=>{["2005-2009"]=>56222.0}}, epr.path_to_parsing(title, row))
+    assert_equal({:name=>"COLORADO", :median_household_income=>{[2005, 2009]=>56222.0}}, epr.path_to_parsing(title, row))
   end
 
   def test_it_can_return_values_from_path_to_parse_for_title_i
@@ -88,9 +88,9 @@ class EconomicProfileRepositoryTest < Minitest::Test
     epr.load_data({
       :economic_profile => {
         :median_household_income => "./data/Median household income.csv",
-        :children_in_poverty => "./data/School-aged children in poverty.csv",
-        :free_or_reduced_price_lunch => "./data/Students qualifying for free or reduced price lunch.csv",
-        :title_i => "./data/Title I students.csv"
+        # :children_in_poverty => "./data/School-aged children in poverty.csv",
+        # :free_or_reduced_price_lunch => "./data/Students qualifying for free or reduced price lunch.csv",
+        # :title_i => "./data/Title I students.csv"
       }
     })
     ep = epr.find_by_name("ACADEMY 20")
@@ -98,6 +98,7 @@ class EconomicProfileRepositoryTest < Minitest::Test
 
     assert_instance_of EconomicProfile, ep
     assert_equal nil, ep2
+    # assert_equal 50000, ep.median_household_income_in_year(2005) #need to work on merging and shit
   end
 
   def test_searching_for_a_name_in_economic_profile
