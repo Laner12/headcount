@@ -1,16 +1,19 @@
-require_relative "errors"
 require_relative "statewide_test_repository"
+require_relative "errors"
 
 class StatewideTest
 
-attr_reader :attributes, :grades, :races, :subjects
+attr_reader :attributes,
+            :subjects,
+            :grades,
+            :races
 
   def initialize(attributes)
     @attributes = attributes
-    @grades = [3, 8]
-    @races = [:asian, :black, :pacific_islander, :hispanic,
-              :native_american, :two_or_more, :white]
-    @subjects = [:math, :reading, :writing]
+    @grades     = [3, 8]
+    @races      = [:asian, :black, :pacific_islander, :hispanic,
+                   :native_american, :two_or_more, :white]
+    @subjects   = [:math, :reading, :writing]
   end
 
   def name
@@ -48,5 +51,4 @@ attr_reader :attributes, :grades, :races, :subjects
       raise UnknownDataError
     end
   end
-
 end

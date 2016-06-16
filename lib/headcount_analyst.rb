@@ -76,7 +76,6 @@ class HeadcountAnalyst
       district = dist[:for]
     elsif dist.keys.first == :across
       district = dist[:across]
-    else
     end
 
     if district.is_a?(Array)
@@ -85,7 +84,6 @@ class HeadcountAnalyst
       return correlating(district)
     elsif district == "STATEWIDE"
       return comparing_states
-    else
     end
   end
 
@@ -112,8 +110,7 @@ class HeadcountAnalyst
     end
     names.map do |dist|
       if dist != "COLORADO"
-        names_array << \
-        kindergarten_participation_correlates_with_high_school_graduation(dist)
+        names_array << kindergarten_participation_correlates_with_high_school_graduation(dist)
       end
     end
     total = names_array.count

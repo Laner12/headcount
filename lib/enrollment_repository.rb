@@ -1,6 +1,5 @@
 require_relative "enrollment"
 require "csv"
-require "pry"
 
 class EnrollmentRepository
   attr_reader :grade_levels,

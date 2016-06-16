@@ -1,4 +1,3 @@
-require "pry"
 require_relative "test_helper"
 require_relative "../lib/district_repository"
 require_relative "../lib/headcount_analyst"
