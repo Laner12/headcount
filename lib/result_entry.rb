@@ -1,6 +1,0 @@
-
-
-class ResultEntry
-
-
-end

@@ -1,83 +1,11 @@
-require_relative "../lib/economic_profile_repository"
-require_relative "test_helper"
+require './test/test_helper'
+require './lib/economic_profile_repository'
 
 class EconomicProfileRepositoryTest < Minitest::Test
 
-  def test_it_can_extract_values_parsing_the_row_with_median_household_title
-    skip
-    title = :median_household_income
-    row = {location: "Colorado",
-          timeframe: "2005-2009",
-          dataformat: "Currency",
-          data:"56222"}
+  def test_loads_data
     epr = EconomicProfileRepository.new
-
-    assert_equal(["COLORADO", [2005, 2009], 56222.0], epr.parse_row(title, row))
-  end
-
-  def test_it_can_extract_values_parsing_the_row_and_returns_types_of_years
-    skip
-    title = :title_i
-    row = {location: "Colorado",
-          timeframe: "2009",
-          dataformat: "Percent",
-          data:"0.216"}
-    epr = EconomicProfileRepository.new
-
-    assert_equal(["COLORADO", 2009, 0.216], epr.parse_row(title, row))
-  end
-
-  def test_it_can_return_values_from_path_to_parse_for_median_household
-    skip
-    title = :median_household_income
-    row = {location: "Colorado",
-          timeframe: "2005-2009",
-          dataformat: "Currency",
-          data:"56222"}
-    epr = EconomicProfileRepository.new
-
-    assert_equal({:name=>"COLORADO", :median_household_income=>{[2005, 2009]=>56222.0}}, epr.path_to_parsing(title, row))
-  end
-
-  def test_it_can_return_values_from_path_to_parse_for_title_i
-    skip
-    title = :title_i
-    row = {location: "Colorado",
-          timeframe: "2009",
-          dataformat: "Percent",
-          data:"0.216"}
-    epr = EconomicProfileRepository.new
-
-    assert_equal({:name=>"COLORADO", :title_i=>{2009=>0.216}}, epr.path_to_parsing(title, row))
-  end
-
-  def test_it_can_return_values_from_path_to_parse_for_poverty
-    skip
-    title = :children_in_poverty
-    row = {location: "Colorado",
-          timeframe: "2009",
-          dataformat: "Percent",
-          data:"0.216"}
-    epr = EconomicProfileRepository.new
-
-    assert_equal({:name=>"COLORADO", :children_in_poverty=>{2009=>0.216}}, epr.path_to_parsing(title, row))
-  end
-
-  def test_it_can_return_values_from_path_to_parse_for_lunch
-    skip
-    title = :free_or_reduced_price_lunch
-    row = {location: "Colorado",
-          povertylevel: "Eligible for Free Lunch",
-          timeframe: "2000",
-          dataformat: "Percent",
-          data:"0.27"}
-    epr = EconomicProfileRepository.new
-
-    assert_equal({:name=>"COLORADO", :free_or_reduced_price_lunch=>{2000=>{:Percent=>0.27}}}, epr.path_to_parsing(title, row))
-  end
-
-  def test_it_returns_an_instance_of_eco_prof
-    epr = EconomicProfileRepository.new
+    assert epr.economic_profile.empty?
     epr.load_data({
       :economic_profile => {
         :median_household_income => "./data/Median household income.csv",
@@ -85,22 +13,27 @@ class EconomicProfileRepositoryTest < Minitest::Test
         :free_or_reduced_price_lunch => "./data/Students qualifying for free or reduced price lunch.csv",
         :title_i => "./data/Title I students.csv"
       }
-    })
-    ep = epr.find_by_name("ACADEMY 20")
-    ep2 = epr.find_by_name("lane")
-    assert_instance_of EconomicProfile, ep
-    binding.pry
-    assert_equal nil, ep2
-  end
+      })
+      refute epr.economic_profile.empty?
+      ep = epr.find_by_name("ACADEMY 20")
+      assert_instance_of EconomicProfile, ep
+      assert_equal 181, epr.economic_profile.count
+      result_a = {[2005, 2009]=>85060, [2006, 2010]=>85450, [2008, 2012]=>89615, [2007, 2011]=>88099, [2009, 2013]=>89953}
+      result_b = {1995=>0.032, 1997=>0.035, 1999=>0.032, 2000=>0.031, 2001=>0.029, 2002=>0.033, 2003=>0.037, 2004=>0.034, 2005=>0.042, 2006=>0.036, 2007=>0.039, 2008=>855.0, 2009=>0.047, 2010=>0.05754, 2011=>0.059, 2012=>0.064, 2013=>0.048}
+      result_c = {2009=>0.014, 2011=>0.011, 2012=>0.01072, 2013=>0.01246, 2014=>0.0273}
+      result_d = {2014=>{:percentage=>0.08772, :total=>976}, 2012=>{:percentage=>0.12539, :total=>3006}, 2011=>{:percentage=>0.0843, :total=>2834}, 2010=>{:percentage=>0.079, :total=>774}, 2009=>{:percentage=>0.0707, :total=>739}, 2013=>{:percentage=>0.09183, :total=>977}, 2008=>{:percentage=>0.0613, :total=>1343}, 2007=>{:percentage=>0.05, :total=>1071}, 2006=>{:percentage=>0.0416, :total=>653}, 2005=>{:percentage=>0.0587, :total=>1204}, 2004=>{:percentage=>0.0344, :total=>681}, 2003=>{:percentage=>0.03, :total=>435}, 2002=>{:percentage=>0.02722, :total=>396}, 2001=>{:percentage=>0.0247, :total=>407}, 2000=>{:percentage=>0.02, :total=>332}}
+      assert_equal result_a, epr.economic_profile["ACADEMY 20"].information[:median_household_income]
+      assert_equal result_b, epr.economic_profile["ACADEMY 20"].information[:children_in_poverty]
+      assert_equal result_c, epr.economic_profile["ACADEMY 20"].information[:title_i]
+      assert_equal result_d, epr.economic_profile["ACADEMY 20"].information[:free_or_reduced_price_lunch]
+    end
 
-  def test_searching_for_a_name_in_economic_profile
-    ep1 = EconomicProfile.new({:name => "ACADEMY 20"})
-    ep2 = EconomicProfile.new({:name => "ACADEMY 30"})
-    ep3 = EconomicProfile.new({:name => "ADAMS"})
-    erp = EconomicProfileRepository.new({"ACADEMY 20" => ep1,
-                                   "ACADEMY 30" => ep2,
-                                   "ADAMS" => ep3})
+    def test_find_by_name
+      ep = EconomicProfile.new({:name => "ACADEMY 20"})
+      epr = EconomicProfileRepository.new({ep.name => ep})
+      assert_equal nil, epr.find_by_name("alakjhgs")
+      assert_instance_of EconomicProfile, epr.find_by_name("Academy 20")
+      assert_equal "ACADEMY 20", epr.find_by_name("Academy 20").name
+    end
 
-    assert_equal ep3, erp.find_by_name("ADAMS")
   end
-end

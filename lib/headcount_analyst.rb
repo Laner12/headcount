@@ -58,7 +58,7 @@ class HeadcountAnalyst
       kinder_years(dist_name)
     end
     year_collection[0].merge!(year_collection[1]) do |key , key_one, key_two|
-    Truncate.truncate_float(key_one / key_two)
+      Truncate.truncate_float(key_one / key_two)
     end
   end
 
@@ -119,8 +119,8 @@ class HeadcountAnalyst
     total = names_array.count
     matched_district_parameter_counter = 0
     names_array.each do |result|
-       matched_district_parameter_counter += 1 if result == true
-     end
+      matched_district_parameter_counter += 1 if result == true
+    end
     final = (matched_district_parameter_counter/ total.to_f)
     percent = Truncate.truncate_nan(final)
     if percent >= 0.70

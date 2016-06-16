@@ -5,8 +5,8 @@ require "csv"
 
 class DistrictRepository
   attr_reader :enrollment_repo,
-              :statewide_repo,
-              :districts
+  :statewide_repo,
+  :districts
 
   def initialize(districts = {})
     @districts  = districts
@@ -16,14 +16,14 @@ class DistrictRepository
 
 
   def load_data(file_path)
-  enrollment_repo.load_data(file_path)
-  file = file_path[:enrollment][:kindergarten]
+    enrollment_repo.load_data(file_path)
+    file = file_path[:enrollment][:kindergarten]
     CSV.foreach(file, headers: true, header_converters: :symbol) do |row|
       name = row[:location].upcase
       data = { :name => name}
       check_objects = find_by_name(name)
       if check_objects == nil
-      districts[name] = District.new(data, self)
+        districts[name] = District.new(data, self)
       end
     end
   end
@@ -44,7 +44,7 @@ class DistrictRepository
   end
 
   def enrollment_connector(name)
-   enrollment_repo.enrollments[name.upcase]
+    enrollment_repo.enrollments[name.upcase]
   end
 
   def state_connector(name)
@@ -52,6 +52,6 @@ class DistrictRepository
   end
 
   def collect_district_names
-   enrollment_repo.enrollments.keys
+    enrollment_repo.enrollments.keys
   end
 end

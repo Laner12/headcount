@@ -27,9 +27,9 @@ class StatewideTestRepository
 
   def determinate_percentage(data)
     if data == "N/A"
-    "N/A"
+      "N/A"
     else
-     data.to_f
+      data.to_f
     end
   end
 

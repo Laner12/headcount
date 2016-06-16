@@ -1,8 +1,8 @@
 class District
   attr_reader :name,
-              :district_repo,
-              :attributes,
-              :state_connector
+  :district_repo,
+  :attributes,
+  :state_connector
 
   def initialize(attributes, district_repo = nil)
     @attributes = attributes
@@ -17,8 +17,8 @@ class District
     district_repo.enrollment_connector(attributes[:name].upcase)
   end
 
-def statewide_test
-  district_repo.state_connector(attributes[:name].upcase)
-end
+  def statewide_test
+    district_repo.state_connector(attributes[:name].upcase)
+  end
 
 end
