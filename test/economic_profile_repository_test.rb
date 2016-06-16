@@ -4,7 +4,7 @@ require_relative "test_helper"
 class EconomicProfileRepositoryTest < Minitest::Test
 
   def test_it_can_extract_values_parsing_the_row_with_median_household_title
-    skip
+    
     title = :median_household_income
     row = {location: "Colorado",
           timeframe: "2005-2009",
@@ -16,7 +16,7 @@ class EconomicProfileRepositoryTest < Minitest::Test
   end
 
   def test_it_can_extract_values_parsing_the_row_and_returns_types_of_years
-    skip
+    
     title = :title_i
     row = {location: "Colorado",
           timeframe: "2009",
@@ -28,7 +28,7 @@ class EconomicProfileRepositoryTest < Minitest::Test
   end
 
   def test_it_can_return_values_from_path_to_parse_for_median_household
-    skip
+    
     title = :median_household_income
     row = {location: "Colorado",
           timeframe: "2005-2009",
@@ -40,7 +40,7 @@ class EconomicProfileRepositoryTest < Minitest::Test
   end
 
   def test_it_can_return_values_from_path_to_parse_for_title_i
-    skip
+    
     title = :title_i
     row = {location: "Colorado",
           timeframe: "2009",
@@ -52,7 +52,7 @@ class EconomicProfileRepositoryTest < Minitest::Test
   end
 
   def test_it_can_return_values_from_path_to_parse_for_poverty
-    skip
+    
     title = :children_in_poverty
     row = {location: "Colorado",
           timeframe: "2009",
@@ -64,7 +64,7 @@ class EconomicProfileRepositoryTest < Minitest::Test
   end
 
   def test_it_can_return_values_from_path_to_parse_for_lunch
-    skip
+    
     title = :free_or_reduced_price_lunch
     row = {location: "Colorado",
           povertylevel: "Eligible for Free Lunch",
@@ -89,7 +89,6 @@ class EconomicProfileRepositoryTest < Minitest::Test
     ep = epr.find_by_name("ACADEMY 20")
     ep2 = epr.find_by_name("lane")
     assert_instance_of EconomicProfile, ep
-    binding.pry
     assert_equal nil, ep2
   end
 

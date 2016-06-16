@@ -41,7 +41,6 @@ class StatewideTestRepository
       subjects = [:math, :reading, :writing]
       file = file_path
 
-
       CSV.foreach(file, headers: true, header_converters: :symbol) do |row|
         name = row[:location].upcase
         subject = row[:score].downcase.to_sym if row.include?(:score)
@@ -76,5 +75,4 @@ class StatewideTestRepository
   def find_by_name(name)
     statewide_tests[name.upcase]
   end
-
 end

@@ -1,6 +1,6 @@
-require_relative "district"
-require_relative "enrollment_repository"
 require_relative "statewide_test_repository"
+require_relative "enrollment_repository"
+require_relative "district"
 require "csv"
 
 class DistrictRepository
@@ -9,9 +9,9 @@ class DistrictRepository
               :districts
 
   def initialize(districts = {})
-    @districts  = districts
+    @districts       = districts
     @enrollment_repo = EnrollmentRepository.new
-    @statewide_repo = StatewideTestRepository.new
+    @statewide_repo  = StatewideTestRepository.new
   end
 
 

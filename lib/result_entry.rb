@@ -1,6 +1,3 @@
-
-
 class ResultEntry
-
 
 end

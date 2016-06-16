@@ -2,7 +2,6 @@ require_relative "../lib/economic_profile"
 require_relative "test_helper"
 
 class EconomicProfileTest < Minitest::Test
-# all of these need to hit an unknown data error
 
   def test_it_has_a_name
     data = {:median_household_income => {[2005, 2009] => 50000, [2008, 2014] => 60000},

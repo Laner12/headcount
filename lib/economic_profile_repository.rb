@@ -1,6 +1,5 @@
 require_relative "economic_profile"
 require "csv"
-require "pry"
 
 class EconomicProfileRepository
 
@@ -84,8 +83,7 @@ class EconomicProfileRepository
     end
   end
 
-    def find_by_name(name)
-      economic_profile[name.upcase]
-    end
-
+  def find_by_name(name)
+    economic_profile[name.upcase]
+  end
 end

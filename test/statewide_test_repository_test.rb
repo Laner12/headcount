@@ -1,10 +1,8 @@
-
 require './test/test_helper'
 require './lib/statewide_test_repository'
 require './lib/statewide_test'
 
 class StatewideTestRepositoryTest < Minitest::Test
-
 
  def test_loads_data
       statewiderepo_class = StatewideTestRepository.new
@@ -23,5 +21,4 @@ class StatewideTestRepositoryTest < Minitest::Test
       assert_equal result1, statewiderepo_class.statewide_tests["ACADEMY 20"].attributes[:asian]
       assert_equal result2, statewiderepo_class.statewide_tests["ACADEMY 20"].attributes[3]
  end
-
 end

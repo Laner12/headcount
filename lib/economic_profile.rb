@@ -1,5 +1,5 @@
 require_relative "truncate"
-require "pry"
+
 class EconomicProfile
   attr_reader :data
 
@@ -11,24 +11,7 @@ class EconomicProfile
     data[:name].upcase
   end
 
-  def median_household_income(input)
-
-  end
-
-  def children_in_poverty(input)
-
-  end
-
-  def free_or_reduced_price_lunch(input)
-
-  end
-
-  def title_i(input)
-
-  end
-
   def median_household_income_in_year(year)
-    # could do a method call that checks the year first
     collection = []
     data[:median_household_income].each_key do |key|
       if year.between?(key[0], key[1])
