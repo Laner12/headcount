@@ -4,6 +4,7 @@ require_relative "test_helper"
 class EconomicProfileRepositoryTest < Minitest::Test
 
   def test_it_can_extract_values_parsing_the_row_with_median_household_title
+    skip
     title = :median_household_income
     row = {location: "Colorado",
           timeframe: "2005-2009",
@@ -15,6 +16,7 @@ class EconomicProfileRepositoryTest < Minitest::Test
   end
 
   def test_it_can_extract_values_parsing_the_row_and_returns_types_of_years
+    skip
     title = :title_i
     row = {location: "Colorado",
           timeframe: "2009",
@@ -24,21 +26,9 @@ class EconomicProfileRepositoryTest < Minitest::Test
 
     assert_equal(["COLORADO", 2009, 0.216], epr.parse_row(title, row))
   end
-# may need to revisit this
-  # def test_it_can_extract_values_parsing_the_row_and_return_extra_row_for_lunch
-  #   skip
-  #   title = :free_or_reduced_price_lunch
-  #   row = {location: "Colorado",
-  #         povertylevel: "Eligible for Free Lunch",
-  #         timeframe: "2000",
-  #         dataformat: "Percent",
-  #         data:"0.27"}
-  #   epr = EconomicProfileRepository.new
-  #
-  #   assert_equal(["COLORADO", "Eligible for Free Lunch", 2000, "Percent", 0.27], epr.parse_row_lunch(title, row))
-  # end
 
   def test_it_can_return_values_from_path_to_parse_for_median_household
+    skip
     title = :median_household_income
     row = {location: "Colorado",
           timeframe: "2005-2009",
@@ -50,6 +40,7 @@ class EconomicProfileRepositoryTest < Minitest::Test
   end
 
   def test_it_can_return_values_from_path_to_parse_for_title_i
+    skip
     title = :title_i
     row = {location: "Colorado",
           timeframe: "2009",
@@ -61,6 +52,7 @@ class EconomicProfileRepositoryTest < Minitest::Test
   end
 
   def test_it_can_return_values_from_path_to_parse_for_poverty
+    skip
     title = :children_in_poverty
     row = {location: "Colorado",
           timeframe: "2009",
@@ -68,10 +60,11 @@ class EconomicProfileRepositoryTest < Minitest::Test
           data:"0.216"}
     epr = EconomicProfileRepository.new
 
-    assert_equal({:name=>"COLORADO", :children_in_poverty=>{2009=>{:Percent=>0.216}}}, epr.path_to_parsing(title, row))
+    assert_equal({:name=>"COLORADO", :children_in_poverty=>{2009=>0.216}}, epr.path_to_parsing(title, row))
   end
 
   def test_it_can_return_values_from_path_to_parse_for_lunch
+    skip
     title = :free_or_reduced_price_lunch
     row = {location: "Colorado",
           povertylevel: "Eligible for Free Lunch",
@@ -88,17 +81,16 @@ class EconomicProfileRepositoryTest < Minitest::Test
     epr.load_data({
       :economic_profile => {
         :median_household_income => "./data/Median household income.csv",
-        # :children_in_poverty => "./data/School-aged children in poverty.csv",
-        # :free_or_reduced_price_lunch => "./data/Students qualifying for free or reduced price lunch.csv",
-        # :title_i => "./data/Title I students.csv"
+        :children_in_poverty => "./data/School-aged children in poverty.csv",
+        :free_or_reduced_price_lunch => "./data/Students qualifying for free or reduced price lunch.csv",
+        :title_i => "./data/Title I students.csv"
       }
     })
     ep = epr.find_by_name("ACADEMY 20")
     ep2 = epr.find_by_name("lane")
-
     assert_instance_of EconomicProfile, ep
+    binding.pry
     assert_equal nil, ep2
-    # assert_equal 50000, ep.median_household_income_in_year(2005) #need to work on merging and shit
   end
 
   def test_searching_for_a_name_in_economic_profile
